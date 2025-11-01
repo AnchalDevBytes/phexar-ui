@@ -1,0 +1,10 @@
+import { createMDX } from "fumadocs-mdx/next";
+
+const nextConfig = {
+  reactCompiler: true,
+  reactStrictMode: true,
+};
+
+const withMDX = createMDX();
+
+export default withMDX(nextConfig);
