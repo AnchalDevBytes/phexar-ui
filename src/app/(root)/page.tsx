@@ -1,9 +1,9 @@
-import AiInput01 from "@/components/codesnippetui/ai-input/ai-input-01";
-import AIInput_02 from "@/components/codesnippetui/ai-input/ai-input-02";
-import AIInput_03 from "@/components/codesnippetui/ai-input/ai-input-03";
-import AIInput_04 from "@/components/codesnippetui/ai-input/ai-input-04";
-import AIInput_05 from "@/components/codesnippetui/ai-input/ai-input-05";
-import AIInput_06 from "@/components/codesnippetui/ai-input/ai-input-06";
+import AiInput01 from "@/components/phexarui/ai-input/ai-input-01";
+import AIInput_02 from "@/components/phexarui/ai-input/ai-input-02";
+import AIInput_03 from "@/components/phexarui/ai-input/ai-input-03";
+import AIInput_04 from "@/components/phexarui/ai-input/ai-input-04";
+import AIInput_05 from "@/components/phexarui/ai-input/ai-input-05";
+import AIInput_06 from "@/components/phexarui/ai-input/ai-input-06";
 import HeroSection from "@/components/Landing/Hero";
 // import { div } from "motion/react-client";
 // import Link from "next/link";
@@ -20,12 +20,12 @@ const Home = () => {
       <div className="grid grid-rows-[auto_1fr_auto] min-h-screen px-6 lg:px-4 gap-4 sm:gap-12">
         <HeroSection/>
 
-        <AiInput01/>
+        {/* <AiInput01/>
         <AIInput_02/>
         <AIInput_03/>
         <AIInput_04/>
         <AIInput_05/>
-        <AIInput_06/>
+        <AIInput_06/> */}
       </div>
     </div>
   )

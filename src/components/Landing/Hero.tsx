@@ -6,6 +6,7 @@ import { BrowseComponentsButton } from "../ui/browse-button";
 import BrowseBlockButton from "../ui/browse-blocks";
 import Features from "@/components/Landing/Features";
 import Link from "next/link";
+import Card02 from "@/components/phexarui/card/card-02";
 
 const HeroSection = () => {
   return (
@@ -71,6 +72,7 @@ const HeroSection = () => {
                 Card
               </span>
               {/* card */}
+              <Card02/>
             </div>
 
             {/* Action search bar */}
