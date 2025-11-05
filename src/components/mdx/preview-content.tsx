@@ -51,7 +51,7 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
 
   const handleTerminalClick = () => {
     const [folder, filename ] = link.split("/");
-    const copy = `npx shadecn @latest add ${prePath}/r/${filename ? filename : folder}.json`;
+    const copy = `npx shadecn@latest add ${prePath}/r/${filename ? filename : folder}.json`;
     navigator.clipboard.writeText(copy);
     setIsTerminalCopied(true);
     setTimeout(() => {
