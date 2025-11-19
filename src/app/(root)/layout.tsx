@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function HomeLayout({children} : {children: React.ReactNode}) {
     return (
-        <>
+        <div className="flex flex-col bg-var(--background) text-var(--foreground)">
             <Header/>
             <main>{children}</main>
             <Footer/>
-        </>
+        </div>
     )
 }

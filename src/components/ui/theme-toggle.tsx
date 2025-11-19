@@ -22,7 +22,7 @@ export function ThemeToggler() {
             className="cursor-pointer"
         >
             {
-                theme === "light" ? (<IoIosMoon className="h-5 w-5 text-white"/>) : (<CiSun className="h-5 w-5 text-white"/>) 
+                theme === "light" ? (<IoIosMoon className="h-5 w-5"/>) : (<CiSun className="h-5 w-5"/>) 
             }
         </button>
     )   
