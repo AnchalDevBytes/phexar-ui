@@ -18,7 +18,7 @@ export function ProductGrid({ products, onProductSelect }: ProductGridProps) {
                     whileHover={{ y: -1 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <div className="aspect-[4/5] bg-white dark:bg-zinc-900 rounded-md overflow-hidden">
+                    <div className="aspect-[4/5] bg-white dark:bg-neutral-900 rounded-md overflow-hidden">
                         <img
                             src={product.image}
                             alt={product.name}
@@ -30,10 +30,10 @@ export function ProductGrid({ products, onProductSelect }: ProductGridProps) {
                             {product.name}
                         </h3>
                         <div className="flex justify-between items-center">
-                            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                            <p className="text-xs text-neutral-500 dark:text-neutral-400">
                                 ${product.price}
                             </p>
-                            <p className="text-[10px] text-zinc-400 dark:text-zinc-500">
+                            <p className="text-[10px] text-neutral-400 dark:text-neutral-500">
                                 {product.category}
                             </p>
                         </div>

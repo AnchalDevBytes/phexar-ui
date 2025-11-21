@@ -92,11 +92,11 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-full"
           >
-            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+            <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
               AI Chat
             </span>
             {/* <AIInput_04 /> */}
-            <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
+            <div className="w-full h-48 rounded-xl border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
               {/* <AIInput_04 /> */}
             </div>
           </motion.div>

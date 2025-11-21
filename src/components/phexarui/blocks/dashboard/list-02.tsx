@@ -26,11 +26,11 @@ interface List02Props {
 }
 
 const categoryStyles = {
-    shopping: "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100",
-    food: "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100",
-    transport: "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100",
+    shopping: "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100",
+    food: "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100",
+    transport: "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100",
     entertainment:
-        "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100",
+        "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100",
 };
 
 const TRANSACTIONS: Transaction[] = [
@@ -104,21 +104,21 @@ export default function List02({
         <div
             className={cn(
                 "w-full max-w-xl mx-auto",
-                "bg-white dark:bg-zinc-900/70",
-                "border border-zinc-100 dark:border-zinc-800",
+                "bg-white dark:bg-neutral-900/70",
+                "border border-neutral-100 dark:border-neutral-800",
                 "rounded-xl shadow-sm backdrop-blur-xl",
                 className
             )}
         >
             <div className="p-4">
                 <div className="flex items-center justify-between mb-3">
-                    <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                    <h2 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
                         Recent Activity
-                        <span className="text-xs font-normal text-zinc-600 dark:text-zinc-400 ml-1">
+                        <span className="text-xs font-normal text-neutral-600 dark:text-neutral-400 ml-1">
                             (23 transactions)
                         </span>
                     </h2>
-                    <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                    <span className="text-xs text-neutral-600 dark:text-neutral-400">
                         This Month
                     </span>
                 </div>
@@ -130,26 +130,26 @@ export default function List02({
                             className={cn(
                                 "group flex items-center gap-3",
                                 "p-2 rounded-lg",
-                                "hover:bg-zinc-100 dark:hover:bg-zinc-800/50",
+                                "hover:bg-neutral-100 dark:hover:bg-neutral-800/50",
                                 "transition-all duration-200"
                             )}
                         >
                             <div
                                 className={cn(
                                     "p-2 rounded-lg",
-                                    "bg-zinc-100 dark:bg-zinc-800",
-                                    "border border-zinc-200 dark:border-zinc-700"
+                                    "bg-neutral-100 dark:bg-neutral-800",
+                                    "border border-neutral-200 dark:border-neutral-700"
                                 )}
                             >
-                                <transaction.icon className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
+                                <transaction.icon className="w-4 h-4 text-neutral-900 dark:text-neutral-100" />
                             </div>
 
                             <div className="flex-1 flex items-center justify-between min-w-0">
                                 <div className="space-y-0.5">
-                                    <h3 className="text-xs font-medium text-zinc-900 dark:text-zinc-100">
+                                    <h3 className="text-xs font-medium text-neutral-900 dark:text-neutral-100">
                                         {transaction.title}
                                     </h3>
-                                    <p className="text-[11px] text-zinc-600 dark:text-zinc-400">
+                                    <p className="text-[11px] text-neutral-600 dark:text-neutral-400">
                                         {transaction.timestamp}
                                     </p>
                                 </div>
@@ -180,25 +180,25 @@ export default function List02({
                 </div>
             </div>
 
-            <div className="p-2 border-t border-zinc-100 dark:border-zinc-800">
+            <div className="p-2 border-t border-neutral-100 dark:border-neutral-800">
                 <button
                     type="button"
                     className={cn(
                         "w-full flex items-center justify-center gap-2",
                         "py-2 px-3 rounded-lg",
                         "text-xs font-medium",
-                        "bg-gradient-to-r from-zinc-900 to-zinc-800",
-                        "dark:from-zinc-50 dark:to-zinc-200",
-                        "text-zinc-50 dark:text-zinc-900",
-                        "hover:from-zinc-800 hover:to-zinc-700",
-                        "dark:hover:from-zinc-200 dark:hover:to-zinc-300",
+                        "bg-gradient-to-r from-neutral-900 to-neutral-800",
+                        "dark:from-neutral-50 dark:to-neutral-200",
+                        "text-neutral-50 dark:text-neutral-900",
+                        "hover:from-neutral-800 hover:to-neutral-700",
+                        "dark:hover:from-neutral-200 dark:hover:to-neutral-300",
                         "shadow-sm hover:shadow",
                         "transform transition-all duration-200",
                         "hover:-translate-y-0.5",
                         "active:translate-y-0",
                         "focus:outline-none focus:ring-2",
-                        "focus:ring-zinc-500 dark:focus:ring-zinc-400",
-                        "focus:ring-offset-2 dark:focus:ring-offset-zinc-900"
+                        "focus:ring-neutral-500 dark:focus:ring-neutral-400",
+                        "focus:ring-offset-2 dark:focus:ring-offset-neutral-900"
                     )}
                 >
                     <span>View All Transactions</span>

@@ -58,14 +58,14 @@ export const Preview = ({ isLoading, imageUrl }: PreviewProps) => {
                             <div className="absolute inset-0 bg-linear-to-tr from-transparent via-transparent to-fuchsia-500/10 rounded-full animate-spin-slow" />
                         </div>
                         <div className="space-y-1 text-center">
-                            <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                            <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                 {availableTexts[currentTextIndex]}
                             </p>
-                            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                            <p className="text-xs text-neutral-500 dark:text-neutral-400">
                                 This usually takes 10-15 seconds
                             </p>
                         </div>
-                        <div className="w-full h-1.5 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden">
+                        <div className="w-full h-1.5 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
                             <div
                                 className="h-full bg-fuchsia-500 transition-all duration-300 ease-linear"
                                 style={{ width: `${progress}%` }}

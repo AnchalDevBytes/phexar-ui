@@ -11,7 +11,7 @@ export function RefreshButton({ onRefresh }: RefreshButtonProps) {
         <button
             type="button"
             onClick={onRefresh}
-            className="group absolute top-24 right-2 p-2 rounded-lg text-white dark:text-black hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors z-10 flex items-center gap-2 bg-black dark:bg-white h-7 px-3"
+            className="group absolute top-24 right-2 p-2 rounded-lg text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors z-10 flex items-center gap-2 bg-black dark:bg-white h-7 px-3"
             aria-label="Refresh preview"
         >
             <RefreshCw

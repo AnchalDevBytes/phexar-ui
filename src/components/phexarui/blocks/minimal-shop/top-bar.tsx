@@ -46,9 +46,9 @@ export function TopBar({ cartItemCount, onCartClick, onSearch }: TopBarProps) {
         <div
             className={`sticky top-0 z-40 transition-all duration-200 ${
                 isScrolled
-                    ? "bg-white/90 dark:bg-zinc-900/90 shadow-sm"
-                    : "bg-white/80 dark:bg-zinc-900/80"
-            } backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800`}
+                    ? "bg-white/90 dark:bg-neutral-900/90 shadow-sm"
+                    : "bg-white/80 dark:bg-neutral-900/80"
+            } backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800`}
         >
             <div className="flex items-center justify-between px-3 h-12">
                 <Link
@@ -67,8 +67,8 @@ export function TopBar({ cartItemCount, onCartClick, onSearch }: TopBarProps) {
                             key={category}
                             className={`whitespace-nowrap transition-colors ${
                                 selectedCategory === category
-                                    ? "text-zinc-900 dark:text-white text-sm font-medium"
-                                    : "text-zinc-500 dark:text-zinc-400 text-sm hover:text-zinc-900 dark:hover:text-white"
+                                    ? "text-neutral-900 dark:text-white text-sm font-medium"
+                                    : "text-neutral-500 dark:text-neutral-400 text-sm hover:text-neutral-900 dark:hover:text-white"
                             }`}
                             onClick={() => setSelectedCategory(category)}
                         >
@@ -87,8 +87,8 @@ export function TopBar({ cartItemCount, onCartClick, onSearch }: TopBarProps) {
                             ref={searchInputRef}
                             type="text"
                             placeholder="Search products..."
-                            className={`w-48 sm:w-56 bg-zinc-100 dark:bg-zinc-800 rounded-md text-sm px-3 py-1.5 
-                                focus:outline-none focus:ring-1 focus:ring-zinc-300 dark:focus:ring-zinc-700
+                            className={`w-48 sm:w-56 bg-neutral-100 dark:bg-neutral-800 rounded-md text-sm px-3 py-1.5 
+                                focus:outline-none focus:ring-1 focus:ring-neutral-300 dark:focus:ring-neutral-700
                                 transition-all duration-200 ${
                                     isSearchOpen ? "opacity-100" : "opacity-0"
                                 }`}
@@ -102,8 +102,8 @@ export function TopBar({ cartItemCount, onCartClick, onSearch }: TopBarProps) {
                                     setIsSearchOpen(false);
                                     onSearch("");
                                 }}
-                                className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 hover:bg-zinc-200 
-                                    dark:hover:bg-zinc-700 rounded-full"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 hover:bg-neutral-200 
+                                    dark:hover:bg-neutral-700 rounded-full"
                             >
                                 <X className="w-4 h-4" />
                             </button>
@@ -114,8 +114,8 @@ export function TopBar({ cartItemCount, onCartClick, onSearch }: TopBarProps) {
                         onClick={() => setIsSearchOpen(!isSearchOpen)}
                         className={`p-1.5 rounded-md transition-colors ${
                             isSearchOpen
-                                ? "bg-zinc-100 dark:bg-zinc-800"
-                                : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                                ? "bg-neutral-100 dark:bg-neutral-800"
+                                : "hover:bg-neutral-100 dark:hover:bg-neutral-800"
                         } z-10`}
                     >
                         <Search className="w-4 h-4" />
@@ -123,15 +123,15 @@ export function TopBar({ cartItemCount, onCartClick, onSearch }: TopBarProps) {
                     <button
                         type="button"
                         onClick={onCartClick}
-                        className="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md relative"
+                        className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md relative"
                     >
                         <ShoppingBag className="w-4 h-4" />
                         {cartItemCount > 0 && (
                             <motion.span
                                 initial={{ scale: 0.5 }}
                                 animate={{ scale: 1 }}
-                                className="absolute -top-1 -right-1 bg-zinc-900 dark:bg-white 
-                                    text-white dark:text-zinc-900 text-xs font-medium w-4 h-4 
+                                className="absolute -top-1 -right-1 bg-neutral-900 dark:bg-white 
+                                    text-white dark:text-neutral-900 text-xs font-medium w-4 h-4 
                                     flex items-center justify-center rounded-full"
                             >
                                 {cartItemCount}

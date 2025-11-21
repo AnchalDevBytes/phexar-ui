@@ -72,18 +72,18 @@ export default function List01({
         <div
             className={cn(
                 "w-full max-w-xl mx-auto",
-                "bg-white dark:bg-zinc-900/70",
-                "border border-zinc-100 dark:border-zinc-800",
+                "bg-white dark:bg-neutral-900/70",
+                "border border-neutral-100 dark:border-neutral-800",
                 "rounded-xl shadow-sm backdrop-blur-xl",
                 className
             )}
         >
             {/* Total Balance Section */}
-            <div className="p-4 border-b border-zinc-100 dark:border-zinc-800">
-                <p className="text-xs text-zinc-600 dark:text-zinc-400">
+            <div className="p-4 border-b border-neutral-100 dark:border-neutral-800">
+                <p className="text-xs text-neutral-600 dark:text-neutral-400">
                     Total Balance
                 </p>
-                <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+                <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                     {totalBalance}
                 </h1>
             </div>
@@ -91,7 +91,7 @@ export default function List01({
             {/* Accounts List */}
             <div className="p-3">
                 <div className="flex items-center justify-between mb-2">
-                    <h2 className="text-xs font-medium text-zinc-900 dark:text-zinc-100">
+                    <h2 className="text-xs font-medium text-neutral-900 dark:text-neutral-100">
                         Your Accounts
                     </h2>
                 </div>
@@ -103,7 +103,7 @@ export default function List01({
                             className={cn(
                                 "group flex items-center justify-between",
                                 "p-2 rounded-lg",
-                                "hover:bg-zinc-100 dark:hover:bg-zinc-800/50",
+                                "hover:bg-neutral-100 dark:hover:bg-neutral-800/50",
                                 "transition-all duration-200"
                             )}
                         >
@@ -132,11 +132,11 @@ export default function List01({
                                     )}
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-medium text-zinc-900 dark:text-zinc-100">
+                                    <h3 className="text-xs font-medium text-neutral-900 dark:text-neutral-100">
                                         {account.title}
                                     </h3>
                                     {account.description && (
-                                        <p className="text-[11px] text-zinc-600 dark:text-zinc-400">
+                                        <p className="text-[11px] text-neutral-600 dark:text-neutral-400">
                                             {account.description}
                                         </p>
                                     )}
@@ -144,7 +144,7 @@ export default function List01({
                             </div>
 
                             <div className="text-right">
-                                <span className="text-xs font-medium text-zinc-900 dark:text-zinc-100">
+                                <span className="text-xs font-medium text-neutral-900 dark:text-neutral-100">
                                     {account.balance}
                                 </span>
                             </div>
@@ -154,7 +154,7 @@ export default function List01({
             </div>
 
             {/* Updated footer with four buttons */}
-            <div className="p-2 border-t border-zinc-100 dark:border-zinc-800">
+            <div className="p-2 border-t border-neutral-100 dark:border-neutral-800">
                 <div className="grid grid-cols-4 gap-2">
                     <button
                         type="button"
@@ -162,9 +162,9 @@ export default function List01({
                             "flex items-center justify-center gap-2",
                             "py-2 px-3 rounded-lg",
                             "text-xs font-medium",
-                            "bg-zinc-900 dark:bg-zinc-50",
-                            "text-zinc-50 dark:text-zinc-900",
-                            "hover:bg-zinc-800 dark:hover:bg-zinc-200",
+                            "bg-neutral-900 dark:bg-neutral-50",
+                            "text-neutral-50 dark:text-neutral-900",
+                            "hover:bg-neutral-800 dark:hover:bg-neutral-200",
                             "shadow-sm hover:shadow",
                             "transition-all duration-200"
                         )}
@@ -178,9 +178,9 @@ export default function List01({
                             "flex items-center justify-center gap-2",
                             "py-2 px-3 rounded-lg",
                             "text-xs font-medium",
-                            "bg-zinc-900 dark:bg-zinc-50",
-                            "text-zinc-50 dark:text-zinc-900",
-                            "hover:bg-zinc-800 dark:hover:bg-zinc-200",
+                            "bg-neutral-900 dark:bg-neutral-50",
+                            "text-neutral-50 dark:text-neutral-900",
+                            "hover:bg-neutral-800 dark:hover:bg-neutral-200",
                             "shadow-sm hover:shadow",
                             "transition-all duration-200"
                         )}
@@ -194,9 +194,9 @@ export default function List01({
                             "flex items-center justify-center gap-2",
                             "py-2 px-3 rounded-lg",
                             "text-xs font-medium",
-                            "bg-zinc-900 dark:bg-zinc-50",
-                            "text-zinc-50 dark:text-zinc-900",
-                            "hover:bg-zinc-800 dark:hover:bg-zinc-200",
+                            "bg-neutral-900 dark:bg-neutral-50",
+                            "text-neutral-50 dark:text-neutral-900",
+                            "hover:bg-neutral-800 dark:hover:bg-neutral-200",
                             "shadow-sm hover:shadow",
                             "transition-all duration-200"
                         )}
@@ -210,9 +210,9 @@ export default function List01({
                             "flex items-center justify-center gap-2",
                             "py-2 px-3 rounded-lg",
                             "text-xs font-medium",
-                            "bg-zinc-900 dark:bg-zinc-50",
-                            "text-zinc-50 dark:text-zinc-900",
-                            "hover:bg-zinc-800 dark:hover:bg-zinc-200",
+                            "bg-neutral-900 dark:bg-neutral-50",
+                            "text-neutral-50 dark:text-neutral-900",
+                            "hover:bg-neutral-800 dark:hover:bg-neutral-200",
                             "shadow-sm hover:shadow",
                             "transition-all duration-200"
                         )}

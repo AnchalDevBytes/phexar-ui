@@ -13,7 +13,7 @@ export function OpenInV0Button({
         <Button
             aria-label="Open in v0"
             className={cn(
-                "h-7 gap-1 rounded-lg shadow-none bg-black px-3 text-xs text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-colors duration-200 not-prose",
+                "h-7 gap-1 rounded-lg shadow-none bg-black px-3 text-xs text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-colors duration-200 not-prose",
                 className
             )}
             asChild

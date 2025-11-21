@@ -48,7 +48,7 @@ export default function AICardGeneration() {
     };
 
     return (
-        <div className="group relative overflow-hidden w-full max-w-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] min-h-[500px] flex flex-col justify-between gap-2">
+        <div className="group relative overflow-hidden w-full max-w-sm bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] min-h-[500px] flex flex-col justify-between gap-2">
             <HeaderGeneration />
             <div className="flex-1 overflow-hidden flex flex-col">
                 {error && <ErrorGeneration error={error} />}
@@ -68,20 +68,20 @@ export default function AICardGeneration() {
 
                         {!isLoading && (
                             <div className="space-y-4">
-                                <div className="p-3 space-y-2 bg-zinc-50 dark:bg-zinc-800/50 rounded-xl">
+                                <div className="p-3 space-y-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
                                     <div className="flex justify-between text-sm">
-                                        <span className="text-zinc-500">
+                                        <span className="text-neutral-500">
                                             Quality
                                         </span>
-                                        <span className="text-zinc-900 dark:text-zinc-100">
+                                        <span className="text-neutral-900 dark:text-neutral-100">
                                             1080p
                                         </span>
                                     </div>
                                     <div className="flex justify-between text-sm">
-                                        <span className="text-zinc-500">
+                                        <span className="text-neutral-500">
                                             Duration
                                         </span>
-                                        <span className="text-zinc-900 dark:text-zinc-100">
+                                        <span className="text-neutral-900 dark:text-neutral-100">
                                             00:07
                                         </span>
                                     </div>
@@ -91,13 +91,13 @@ export default function AICardGeneration() {
                                     <button
                                         type="button"
                                         onClick={handleBackToSettings}
-                                        className="w-full h-9 flex items-center justify-center gap-2 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 text-sm font-medium rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                                        className="w-full h-9 flex items-center justify-center gap-2 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-medium rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                                     >
                                         Back to Settings
                                     </button>
                                     <button
                                         type="button"
-                                        className="w-full h-9 flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 dark:text-zinc-900 text-white text-sm font-medium rounded-xl transition-colors"
+                                        className="w-full h-9 flex items-center justify-center gap-2 bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white text-sm font-medium rounded-xl transition-colors"
                                     >
                                         Download
                                     </button>

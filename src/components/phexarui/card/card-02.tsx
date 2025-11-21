@@ -43,13 +43,13 @@ export default function Card02({
             <div
                 className={cn(
                     "relative overflow-hidden",
-                    "bg-white/50 dark:bg-zinc-900/50",
+                    "bg-white/50 dark:bg-neutral-900/50",
                     "backdrop-blur-xl",
-                    "border border-zinc-200/50 dark:border-zinc-800/50",
+                    "border border-neutral-200/50 dark:border-neutral-800/50",
                     "rounded-2xl",
                     "transition-all duration-300",
-                    "hover:shadow-xl hover:shadow-zinc-200/20 dark:hover:shadow-zinc-900/20",
-                    "hover:border-zinc-300/50 dark:hover:border-zinc-700/50"
+                    "hover:shadow-xl hover:shadow-neutral-200/20 dark:hover:shadow-neutral-900/20",
+                    "hover:border-neutral-300/50 dark:hover:border-neutral-700/50"
                 )}
             >
                 <div className="p-5">
@@ -58,7 +58,7 @@ export default function Card02({
                             <div
                                 className={cn(
                                     "w-16 h-16 rounded-xl overflow-hidden",
-                                    "ring-2 ring-zinc-100 dark:ring-zinc-800"
+                                    "ring-2 ring-neutral-100 dark:ring-neutral-800"
                                 )}
                             >
                                 <Image
@@ -72,10 +72,10 @@ export default function Card02({
                         </div>
 
                         <div className="flex-1">
-                            <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                            <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                                 {name}
                             </h3>
-                            <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-0.5">
+                            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-0.5">
                                 {role}
                             </p>
                             <div
@@ -101,15 +101,15 @@ export default function Card02({
                                 className={cn(
                                     "flex items-center gap-3",
                                     "p-2 rounded-xl",
-                                    "bg-zinc-50 dark:bg-zinc-800/50",
-                                    "hover:bg-zinc-100 dark:hover:bg-zinc-800",
+                                    "bg-neutral-50 dark:bg-neutral-800/50",
+                                    "hover:bg-neutral-100 dark:hover:bg-neutral-800",
                                     "transition-colors duration-200"
                                 )}
                             >
-                                <Code2 className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
+                                <Code2 className="w-4 h-4 text-neutral-900 dark:text-neutral-100" />
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between text-sm mb-1.5">
-                                        <span className="text-zinc-700 dark:text-zinc-300 font-medium">
+                                        <span className="text-neutral-700 dark:text-neutral-300 font-medium">
                                             {skill.name}
                                         </span>
                                     </div>
@@ -120,8 +120,8 @@ export default function Card02({
                                                 className={cn(
                                                     "h-1 rounded-full flex-1",
                                                     i < skill.level
-                                                        ? "bg-zinc-900 dark:bg-zinc-100"
-                                                        : "bg-zinc-200 dark:bg-zinc-700"
+                                                        ? "bg-neutral-900 dark:bg-neutral-100"
+                                                        : "bg-neutral-200 dark:bg-neutral-700"
                                                 )}
                                             />
                                         ))}
@@ -138,9 +138,9 @@ export default function Card02({
                         size="sm"
                         className={cn(
                             "w-full",
-                            "bg-zinc-900 dark:bg-zinc-100",
-                            "hover:bg-zinc-700 dark:hover:bg-zinc-300",
-                            "text-white dark:text-zinc-900",
+                            "bg-neutral-900 dark:bg-neutral-100",
+                            "hover:bg-neutral-700 dark:hover:bg-neutral-300",
+                            "text-white dark:text-neutral-900",
                             "shadow-xs"
                         )}
                     >
@@ -149,10 +149,10 @@ export default function Card02({
                     </Button>
                     <Button
                         variant="ghost"
-                        className="flex items-center gap-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg p-1.5"
+                        className="flex items-center gap-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg p-1.5"
                     >
-                        <Share2 className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
-                        <span className="text-sm text-zinc-900 dark:text-zinc-100">
+                        <Share2 className="w-4 h-4 text-neutral-900 dark:text-neutral-100" />
+                        <span className="text-sm text-neutral-900 dark:text-neutral-100">
                             Share
                         </span>
                     </Button>

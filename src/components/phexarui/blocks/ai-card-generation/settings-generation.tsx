@@ -32,12 +32,12 @@ export const SettingsGeneration = ({
     onSettingsChange,
 }: SettingsProps) => {
     return (
-        <div className="space-y-4 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50">
+        <div className="space-y-4 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50">
             {/* Style Select */}
             <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                    <Palette className="w-4 h-4 text-zinc-500" />
-                    <span className="text-sm text-zinc-500">Style</span>
+                    <Palette className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-500">Style</span>
                 </div>
                 <Select
                     value={settings.style}
@@ -45,7 +45,7 @@ export const SettingsGeneration = ({
                         onSettingsChange({ ...settings, style: value })
                     }
                 >
-                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
+                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700">
                         <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -62,8 +62,8 @@ export const SettingsGeneration = ({
             {/* Background Select */}
             <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                    <Image className="w-4 h-4 text-zinc-500" />
-                    <span className="text-sm text-zinc-500">Background</span>
+                    <Image className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-500">Background</span>
                 </div>
                 <Select
                     value={settings.backgroundColor}
@@ -74,7 +74,7 @@ export const SettingsGeneration = ({
                         })
                     }
                 >
-                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
+                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700">
                         <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -89,8 +89,8 @@ export const SettingsGeneration = ({
             {/* Lighting Select */}
             <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                    <Sun className="w-4 h-4 text-zinc-500" />
-                    <span className="text-sm text-zinc-500">Lighting</span>
+                    <Sun className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-500">Lighting</span>
                 </div>
                 <Select
                     value={settings.lighting}
@@ -98,7 +98,7 @@ export const SettingsGeneration = ({
                         onSettingsChange({ ...settings, lighting: value })
                     }
                 >
-                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
+                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700">
                         <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -113,8 +113,8 @@ export const SettingsGeneration = ({
             {/* Pose Select */}
             <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                    <User className="w-4 h-4 text-zinc-500" />
-                    <span className="text-sm text-zinc-500">Pose</span>
+                    <User className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-500">Pose</span>
                 </div>
                 <Select
                     value={settings.pose}
@@ -122,7 +122,7 @@ export const SettingsGeneration = ({
                         onSettingsChange({ ...settings, pose: value })
                     }
                 >
-                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700">
+                    <SelectTrigger className="w-[140px] h-8 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700">
                         <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -137,10 +137,10 @@ export const SettingsGeneration = ({
             {/* Quality Select */}
             <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                    <Monitor className="w-4 h-4 text-zinc-500" />
-                    <span className="text-sm text-zinc-500">Quality</span>
+                    <Monitor className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-500">Quality</span>
                 </div>
-                <span className="text-sm text-zinc-900 dark:text-zinc-100">
+                <span className="text-sm text-neutral-900 dark:text-neutral-100">
                     720p
                 </span>
             </div>

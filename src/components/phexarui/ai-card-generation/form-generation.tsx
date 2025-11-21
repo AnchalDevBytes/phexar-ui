@@ -28,15 +28,15 @@ export const FormGeneration = ({
         >
             <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4 text-zinc-500" />
-                    <span className="text-sm text-zinc-500">Prompt</span>
+                    <MessageCircle className="w-4 h-4 text-neutral-500" />
+                    <span className="text-sm text-neutral-500">Prompt</span>
                 </div>
                 <Input
                     type="text"
                     size={16}
                     defaultValue="Picture of a women with orange background"
                     placeholder="Describe the portrait you want to create..."
-                    className="w-full bg-zinc-100 dark:bg-zinc-800 text-sm text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-500 rounded-xl focus:outline-hidden focus-visible:ring-offset-0 focus-visible:ring-0 focus-visible:border-zinc-900 dark:focus-visible:border-zinc-100"
+                    className="w-full bg-neutral-100 dark:bg-neutral-800 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 rounded-xl focus:outline-hidden focus-visible:ring-offset-0 focus-visible:ring-0 focus-visible:border-neutral-900 dark:focus-visible:border-neutral-100"
                 />
             </div>
 
@@ -47,7 +47,7 @@ export const FormGeneration = ({
 
             <button
                 type="submit"
-                className="w-full h-9 flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 dark:text-zinc-900 text-white text-sm font-medium rounded-xl transition-colors self-end"
+                className="w-full h-9 flex items-center justify-center gap-2 bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white text-sm font-medium rounded-xl transition-colors self-end"
             >
                 <Sparkles className="w-4 h-4" />
                 Generate Portrait

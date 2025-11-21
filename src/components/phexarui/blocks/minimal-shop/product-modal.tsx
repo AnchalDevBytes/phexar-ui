@@ -29,7 +29,7 @@ export function ProductModal({
             />
             <motion.div
                 layoutId={`product-${product.id}`}
-                className="fixed inset-x-4 bottom-0 md:inset-[25%] z-50 bg-white dark:bg-zinc-900 rounded-t-xl md:rounded-xl overflow-hidden max-h-[80vh] md:max-h-[500px]"
+                className="fixed inset-x-4 bottom-0 md:inset-[25%] z-50 bg-white dark:bg-neutral-900 rounded-t-xl md:rounded-xl overflow-hidden max-h-[80vh] md:max-h-[500px]"
             >
                 <div className="h-full md:flex">
                     <div className="relative md:w-2/5">
@@ -51,25 +51,25 @@ export function ProductModal({
                             <div className="flex justify-between items-start mb-2">
                                 <div>
                                     <h2 className="text-sm font-medium">{product.name}</h2>
-                                    <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                                    <p className="text-xs text-neutral-500 dark:text-neutral-400">
                                         {product.category}
                                     </p>
                                 </div>
                                 <p className="text-sm font-medium">${product.price}</p>
                             </div>
                             <div className="space-y-2">
-                                <p className="text-xs text-zinc-600 dark:text-zinc-300">
+                                <p className="text-xs text-neutral-600 dark:text-neutral-300">
                                     {product.description}
                                 </p>
                                 <div className="text-xs space-y-1">
-                                    <p className="text-zinc-500">SKU: {product.id}</p>
-                                    <p className="text-zinc-500">Stock: Available</p>
+                                    <p className="text-neutral-500">SKU: {product.id}</p>
+                                    <p className="text-neutral-500">Stock: Available</p>
                                 </div>
                             </div>
                         </div>
                         <button
                             onClick={() => onAddToCart(product)}
-                            className="w-full mt-3 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-xs font-medium rounded-md hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
+                            className="w-full mt-3 py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs font-medium rounded-md hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
                         >
                             Add to Cart
                         </button>

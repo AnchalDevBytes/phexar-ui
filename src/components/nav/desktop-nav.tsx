@@ -12,7 +12,7 @@ export function DesktopNav({ sections, pathname }: DesktopNavProps) {
     <div className="hidden md:block w-full z-40 space-y-4">
       <div
         className="bg-linear-to-b from-white/95 via-gray-50/95 to-white/95
-                    dark:from-zinc-900/90 dark:via-zinc-800/90 dark:to-zinc-900/90
+                    dark:from-neutral-900/90 dark:via-neutral-800/90 dark:to-neutral-900/90
                     shadow-[0_2px_20px_-2px_rgba(0,0,0,0.15)]
                     backdrop-blur-md
                     border border-[rgba(200,200,200,0.8)] dark:border-[rgba(70,70,70,0.7)]

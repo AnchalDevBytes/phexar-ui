@@ -6,7 +6,7 @@ import { MultimodalInput } from "./multimodal-input";
 
 export default function AiChat() {
     return (
-        <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black dark:from-black dark:via-zinc-800/40 dark:to-black px-4">
+        <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-neutral-900 to-black dark:from-black dark:via-neutral-800/40 dark:to-black px-4">
             <div className="w-full p-4 flex flex-col items-center justify-center h-screen mx-auto">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -17,7 +17,7 @@ export default function AiChat() {
                     <h1 className="text-5xl md:text-6xl font-medium mb-4 tracking-tighter bg-clip-text bg-gradient-to-b from-black to-black/70 text-white">
                         Welcome Traveler
                     </h1>
-                    <p className="text-xl text-zinc-400">
+                    <p className="text-xl text-neutral-400">
                         What can I do for you today?
                     </p>
                 </motion.div>

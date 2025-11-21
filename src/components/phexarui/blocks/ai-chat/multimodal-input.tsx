@@ -11,20 +11,20 @@ const QuickActions = [
     {
         action: "Search the web",
         icon: Search,
-        gradient: "from-zinc-900/50 to-black/50",
-        hoverGradient: "hover:from-zinc-800/50 hover:to-zinc-900/50",
+        gradient: "from-neutral-900/50 to-black/50",
+        hoverGradient: "hover:from-neutral-800/50 hover:to-neutral-900/50",
     },
     {
         action: "Summarize this article",
         icon: FileText,
-        gradient: "from-zinc-900/50 to-black/50",
-        hoverGradient: "hover:from-zinc-800/50 hover:to-zinc-900/50",
+        gradient: "from-neutral-900/50 to-black/50",
+        hoverGradient: "hover:from-neutral-800/50 hover:to-neutral-900/50",
     },
     {
         action: "Translate this text",
         icon: Languages,
-        gradient: "from-zinc-900/50 to-black/50",
-        hoverGradient: "hover:from-zinc-800/50 hover:to-zinc-900/50",
+        gradient: "from-neutral-900/50 to-black/50",
+        hoverGradient: "hover:from-neutral-800/50 hover:to-neutral-900/50",
     },
 ];
 
@@ -40,7 +40,7 @@ export function MultimodalInput() {
 
     return (
         <div className="flex flex-col gap-4 w-full max-w-6xl mx-auto">
-            <div className="relative bg-zinc-900 rounded-xl border border-zinc-800">
+            <div className="relative bg-neutral-900 rounded-xl border border-neutral-800">
                 <Textarea
                     placeholder="What would you like to do?"
                     value={input}
@@ -56,18 +56,18 @@ export function MultimodalInput() {
                         "resize-none",
                         "bg-transparent",
                         "border-none",
-                        "text-zinc-100 text-base",
+                        "text-neutral-100 text-base",
                         "focus:outline-none",
                         "focus-visible:ring-0 focus-visible:ring-offset-0",
-                        "placeholder:text-zinc-500 placeholder:text-base",
+                        "placeholder:text-neutral-500 placeholder:text-base",
                         "min-h-[60px]"
                     )}
                 />
                 <div className="flex items-center justify-end p-3">
                     <Button
                         className={cn(
-                            "px-1.5 py-1.5 h-6 rounded-lg text-sm transition-colors hover:bg-zinc-800 flex items-center justify-between gap-1",
-                            "text-zinc-800",
+                            "px-1.5 py-1.5 h-6 rounded-lg text-sm transition-colors hover:bg-neutral-800 flex items-center justify-between gap-1",
+                            "text-neutral-800",
                             "disabled:opacity-50 disabled:cursor-not-allowed bg-white"
                         )}
                         disabled={input.length === 0}
@@ -102,19 +102,19 @@ export function MultimodalInput() {
                             <button
                                 type="button"
                                 className="group w-full h-full text-left rounded-lg p-2.5
-                                    bg-zinc-900 hover:bg-zinc-800
-                                    border border-zinc-800 hover:border-zinc-700
+                                    bg-neutral-900 hover:bg-neutral-800
+                                    border border-neutral-800 hover:border-neutral-700
                                     transition-colors duration-300
                                     flex flex-col justify-between"
                             >
                                 <div className="flex items-center gap-2">
-                                    <div className="p-1.5 rounded-md bg-zinc-800 border border-zinc-700">
+                                    <div className="p-1.5 rounded-md bg-neutral-800 border border-neutral-700">
                                         <Icon
                                             size={14}
-                                            className="text-zinc-100"
+                                            className="text-neutral-100"
                                         />
                                     </div>
-                                    <div className="text-xs text-zinc-100 font-medium">
+                                    <div className="text-xs text-neutral-100 font-medium">
                                         {item.action}
                                     </div>
                                 </div>
