@@ -8,7 +8,7 @@ import Link from "next/link";
 export function BrowseComponentsButton() {
     return (
         <Link  
-            href={"/docs/components//action-search-bar"}
+            href={"/docs/components/action-search-bar"}
             className="flex items-center gap-8"
         >
             <motion.div

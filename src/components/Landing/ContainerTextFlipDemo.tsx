@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import ButtonWithIconAndShadowBelow from "./ButtonWithIconAndShadowBelow";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const ContainerTextFlipDemo = () => {
@@ -15,8 +15,12 @@ const ContainerTextFlipDemo = () => {
   },[])
 
   return (
-    <div className="flex flex-col w-full sm:max-w-sm md:max-w-2xl gap-5 px-5 md:px-12 lg:px-10 items-start">
-      <ButtonWithIconAndShadowBelow/>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="mt-10 lg:-mt-40"
+    >
       <div className="flex flex-col gap-10">
         <h1 className={cn(
           "text-4xl md:text-7xl lg:text-7xl tracking-tight inline-block text-neutral-700 dark:text-neutral-300 font-bold"
@@ -30,7 +34,7 @@ const ContainerTextFlipDemo = () => {
           Copy paste the most trending components and use them in your websites without having to worry about styling and animations.
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

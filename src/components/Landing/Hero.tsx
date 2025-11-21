@@ -3,34 +3,18 @@
 import { Sparkles } from "lucide-react";
 import { motion } from "motion/react"
 import { BrowseComponentsButton } from "../ui/browse-button";
-import BrowseBlockButton from "../ui/browse-blocks";
+import BrowseBlockButton from "@/components/ui/browse-blocks";
 import Features from "@/components/Landing/Features";
 import Link from "next/link";
 import Card02 from "@/components/phexarui/card/card-02";
+import ContainerTextFlipDemo from "./ContainerTextFlipDemo";
 
 const HeroSection = () => {
   return (
     <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 md:py-16 lg:py-20">
         {/* left side title and cta */}
         <div className="w-full lg:w-[45%] flex-col items-start text-left space-y-8">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                <h1 
-                  className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-neutral-900 dark:text-neutral-100"
-                > 
-                  Craft with 
-                  <span  className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 via-fuchsia-500 to-rose-500 dark:from-purple-400 dark:via-fuchsia-400 dark:to-rose-400">Tailwindcss</span>
-                  <br />
-                  and {""}
-                  <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 via-fuchsia-500 to-rose-500 dark:from-purple-400 dark:via-fuchsia-400 dark:to-rose-400">Framer Motion</span>
-                </h1>
-
-                <p className="mt-6 text-base md:text-xl text-neutral-700 dark:text-neutral-300 max-w-lg">A curated collection of components to help you build modern websites with Tailwindcss and Framer Motion</p>
-
-            </motion.div>
+            <ContainerTextFlipDemo/>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

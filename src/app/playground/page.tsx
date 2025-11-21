@@ -1,5 +1,5 @@
-import ButtonWithIconAndShadowBelow from "@/components/Playground/ButtonWithIconAndShadowBelow";
-import TextChangingHeroSection from "@/components/Playground/ContainerTextFlipDemo";
+import ButtonWithIconAndShadowBelow from "@/components/Landing/ButtonWithIconAndShadowBelow";
+import TextChangingHeroSection from "@/components/Landing/ContainerTextFlipDemo";
 
 
 const Playground = () => {
