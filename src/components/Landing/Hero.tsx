@@ -2,12 +2,13 @@
 
 import { Sparkles } from "lucide-react";
 import { motion } from "motion/react"
-import { BrowseComponentsButton } from "../ui/browse-button";
+import { BrowseComponentsButton } from "@/components/ui/browse-button";
 import BrowseBlockButton from "@/components/ui/browse-blocks";
 import Features from "@/components/Landing/Features";
 import Link from "next/link";
 import Card02 from "@/components/phexarui/card/card-02";
 import ContainerTextFlipDemo from "./ContainerTextFlipDemo";
+import ButtonWithIconAndShadowBelow from "@/components/Landing/ButtonWithIconAndShadowBelow";
 
 const HeroSection = () => {
   return (
@@ -15,6 +16,7 @@ const HeroSection = () => {
         {/* left side title and cta */}
         <div className="w-full lg:w-[45%] flex-col items-start text-left space-y-8">
             <ContainerTextFlipDemo/>
+            <ButtonWithIconAndShadowBelow/>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -1,0 +1,31 @@
+<svg width="250" height="40" viewBox="0 0 250 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <style>
+        /* Define colors for easy adaptation */
+        .outline { stroke: #212529; stroke-width: 2.5; fill: none; } /* Dark Outline */
+        .accent-fill { fill: #dc3545; } /* A clean, deep red/crimson */
+        .text-main { fill: #212529; font-weight: 700; } /* Bold Dark Text */
+        .text-subtle { fill: #6c757d; font-weight: 400; } /* Muted Gray Text */
+
+        /* Dark Mode Styling */
+        @media (prefers-color-scheme: dark) {
+            .outline { stroke: #f8f9fa; } /* Light Outline */
+            .accent-fill { fill: #f07f87; } /* Slightly brighter red/crimson in dark mode */
+            .text-main { fill: #f8f9fa; } /* White Text */
+            .text-subtle { fill: #adb5bd; } /* Lighter Gray Text */
+        }
+    </style>
+</defs>
+
+<g transform="translate(0, 4)">
+    <rect class="outline" x="0.5" y="0.5" width="31" height="31" rx="4"/>
+    
+    <path class="accent-fill" d="M8 8H18C20.2091 8 22 9.79086 22 12V18C22 20.2091 20.2091 22 18 22H8V8Z"/>
+    <path fill="white" d="M11 11H18C19.1046 11 20 11.8954 20 13V17C20 18.1046 19.1046 19 18 19H11V11Z"/>
+    <path class="accent-fill" d="M8 8V28H10V8H8Z"/>
+</g>
+
+<text x="40" y="24" font-family="Inter, system-ui, sans-serif" font-size="24" class="text-main">Phexar</text>
+
+<text x="130" y="24" font-family="Inter, system-ui, sans-serif" font-size="24" class="text-subtle">UI</text>
+</svg>

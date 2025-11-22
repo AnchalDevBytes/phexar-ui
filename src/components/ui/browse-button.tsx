@@ -18,7 +18,7 @@ export function BrowseComponentsButton() {
             >
                 <Button
                     className={cn(
-                        "relative inline-flex items-center justify-center gap-4 rounded-xl font-medium",
+                        "relative inline-flex items-center justify-center gap-4 rounded-xl font-medium cursor-pointer",
                         "relative h-12 px-6 min-w-72 md:min-w-56",
                         "bg-black dark:bg-white",
                         "border-2 border-orange-500/20 dark:border-orange-400/20",

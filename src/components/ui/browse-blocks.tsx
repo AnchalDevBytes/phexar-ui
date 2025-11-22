@@ -16,7 +16,7 @@ const BrowseBlockButton = () => {
         >
            <Button
             className={cn(
-                "relative inline-flex items-center justify-center gap-4 rounded-xl font-medium",
+                "relative inline-flex items-center justify-center gap-4 rounded-xl font-medium cursor-pointer",
                 "relative h-12 px-6 min-w-72 md:min-w-56",
                 "bg-white dark:bg-black",
                 "text-black dark:text-white",

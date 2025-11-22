@@ -9,14 +9,12 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <div className="flex items-center">
         <Image
-          src={`/phexarui_logo.png`}
+          src={`/phexar-ui-logo.svg`}
           alt="Phexar Logo"
-          width={100}
-          height={100}
-          sizes="(max-width: 768px) 100px, 120px"
+          width={250}
+          height={40}
           className={cn(
-            "dark:filter dark:brightness-0 dark:invert dark:contrast-[1.5] dark:saturation-[1.1]",
-            "h-12 w-auto object-contain object-left scale-125 origin-left"
+            "h-8 w-auto object-contain object-left"
           )}
         />
       </div>

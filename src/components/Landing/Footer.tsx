@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import { GitCommitHorizontal, Github, Globe, Linkedin, Twitter } from "lucide-react"
+import { Github, Globe, Linkedin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -59,4 +59,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

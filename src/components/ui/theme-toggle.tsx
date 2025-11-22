@@ -1,8 +1,7 @@
 "use client"
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { CiSun } from "react-icons/ci";
-import { IoIosMoon } from "react-icons/io";
 
 export function ThemeToggler() {
     const [mounted, setMounted] = useState(false);
@@ -22,7 +21,7 @@ export function ThemeToggler() {
             className="cursor-pointer"
         >
             {
-                theme === "light" ? (<IoIosMoon className="h-5 w-5"/>) : (<CiSun className="h-5 w-5"/>) 
+                theme === "light" ? (<Moon className="h-5 w-5"/>) : (<Sun className="h-5 w-5"/>) 
             }
         </button>
     )   
