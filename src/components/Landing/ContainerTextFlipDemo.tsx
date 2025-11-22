@@ -23,7 +23,7 @@ const ContainerTextFlipDemo = () => {
     >
       <div className="flex flex-col gap-10">
         <h1 className={cn(
-          "text-4xl md:text-7xl lg:text-7xl tracking-tight inline-block text-neutral-700 dark:text-neutral-300 font-bold"
+          "text-4xl md:text-7xl lg:text-7xl tracking-tight inline-block text-neutral-700 dark:text-neutral-300 font-bold font-montserrat"
         )}>
           Make your Websites look 10X{" "}
           <span className="px-2 bg-neutral-200/70 dark:bg-neutral-600/80 rounded-md text-black dark:text-neutral-300">{words[index]}</span>

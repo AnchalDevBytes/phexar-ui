@@ -3,20 +3,17 @@
 import { Sparkles } from "lucide-react";
 import { motion } from "motion/react"
 import { BrowseComponentsButton } from "@/components/ui/browse-button";
-import BrowseBlockButton from "@/components/ui/browse-blocks";
 import Features from "@/components/Landing/Features";
 import Link from "next/link";
 import Card02 from "@/components/phexarui/card/card-02";
-import ContainerTextFlipDemo from "./ContainerTextFlipDemo";
-import ButtonWithIconAndShadowBelow from "@/components/Landing/ButtonWithIconAndShadowBelow";
+import HeroIntro from "@/components/Landing/HeroIntro";
 
 const HeroSection = () => {
   return (
     <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 md:py-16 lg:py-20">
         {/* left side title and cta */}
         <div className="w-full lg:w-[45%] flex-col items-start text-left space-y-8">
-            <ContainerTextFlipDemo/>
-            <ButtonWithIconAndShadowBelow/>
+            <HeroIntro/>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -36,7 +33,6 @@ const HeroSection = () => {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3">
                 <BrowseComponentsButton/>
-                <BrowseBlockButton/>
               </div>
             </motion.div>
 

@@ -29,7 +29,7 @@ export function BrowseComponentsButton() {
                         "backdrop-blur-xs"
                     )}
                 >
-                    <span className="font-medium">Browse Components</span>
+                    <span className="font-medium">See More Components</span>
                     <ArrowDownRight className="w-5 h-5 rotate-270"/>
                 </Button>
 

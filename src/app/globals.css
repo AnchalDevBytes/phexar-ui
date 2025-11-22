@@ -7,6 +7,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --animate-gradient: gradient 6s ease infinite alternate;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@utility bg-300% {
+  background-size: 300%;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
