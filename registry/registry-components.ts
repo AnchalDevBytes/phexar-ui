@@ -129,4 +129,28 @@ export const component: Registry = [
             },
         ],
     },
+    {
+        name: "ai-search-bar",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        registryDependencies: ["textarea"],
+        files: [
+            {
+                path: "src/components/phexarui/searchbars/ai-search-bar.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "elastic-search-bar",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        registryDependencies: ["input"],
+        files: [
+            {
+                path: "src/components/phexarui/searchbars/elastic-search-bar.tsx",
+                type: "registry:component",
+            }
+        ],
+    }
 ]
