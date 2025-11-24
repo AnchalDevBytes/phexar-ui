@@ -23,8 +23,8 @@ const HeroSection = () => {
             >
               <span className="text-sm text-neutral-500 dark:text-neutral-300 pb-3 text-start flex items-center gap-2">
                 <span className="flex items-center gap-1.5">
-                  Now updated with Tailwindcss v3
-                  <span className="inline-flex items-center rounded-md bg-purple-50 dark:bg-purple-900/30 px-2 py-1 text-xs font-medium text-purple-800 dark:text-purple-300">
+                  Now updated with Tailwindcss v4
+                  <span className="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/30 px-2 py-1 text-xs font-medium text-red-800 dark:text-red-300">
                     <Sparkles className="mr-1 h-4 w-4" />
                     New
                   </span>
