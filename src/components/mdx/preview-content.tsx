@@ -1,17 +1,18 @@
 "use client";
 import {
   useActionState,
-  useEffect,
   useState,
   useTransition,
   useRef,
   type RefObject
 } from "react";
 import { Button } from "@/components/ui/button";
-import { Copy, CheckCheck, Terminal } from "lucide-react";
+import { Copy, CheckCheck, Terminal, Code2, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { copyComponent } from "@/lib/action";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {  vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const PreviewContent = ({ link, prePath, isBlock = false} : { 
@@ -27,10 +28,12 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
     success: false
   });
 
-  const [showLoginDialog, setShowLoginDialog] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [isTeminalCopied, setIsTerminalCopied] = useState(false);
+  const [showCode, setShowCode] = useState(false);
+
+  const terminalButtonRef = useRef<HTMLButtonElement>(null);
+  const copyButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleCopyClick = async () => {
     const [folder, filename ] = link.split("/");
@@ -39,8 +42,27 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
       formData.append("folder", folder);
       formData.append("filename", filename || "");
 
-      fromAction(formData);
+      const result = await copyComponent(state, formData);
+      
+      if(result.success && result.content) {
+          navigator.clipboard.writeText(result.content);
+          setIsCopied(true);
+          setTimeout(() => setIsCopied(false), 2000);
+      }
     })
+  };
+
+  const handleViewCode = () => {
+    if (!state.content) {
+        const [folder, filename] = link.split("/");
+        startTransition(() => {
+            const formData = new FormData();
+            formData.append("folder", folder);
+            formData.append("filename", filename);
+            fromAction(formData);
+        });
+    }
+    setShowCode(!showCode);
   };
 
   const getFileName = () => {
@@ -57,21 +79,6 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
       setIsTerminalCopied(false);
     }, 1000);
   }
-
-  useEffect(() => {
-    if(state.error) {
-      setShowLoginDialog(true);
-    }
-
-    if(state.success && state.content) {
-      setIsCopied(true);
-      navigator.clipboard.writeText(state.content);
-
-      setTimeout(() => {
-        setIsCopied(false);
-      }, 2000);
-    }
-  },[state])
 
 
   function SuccessParticles({
@@ -116,8 +123,6 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
     )
   }
 
-  const terminalButtonRef = useRef<HTMLButtonElement>(null);
-  const copyButtonRef = useRef<HTMLButtonElement>(null);
   return (
     <>
     {
@@ -131,12 +136,20 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
       )
     }
 
-    <div 
-      className={cn("relative mt-4", "rounded-xl p-3")}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="flex flex-col gap-2 mt-4 relative">
       <div className="flex justify-end items-center gap-2">
+        {/* view code toggle */}
+        <Button
+          onClick={handleViewCode}
+          variant="ghost"
+          size="sm"
+          className="h-7 px-3 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-300 transition-colors cursor-pointer"
+        >
+          <Code2 className="h-3.5 w-3.5 mr-2" />
+          {showCode ? "Hide Code" : "View Code"}
+        </Button>
+
+        {/* CLI copy button */}
         <Button
           ref={terminalButtonRef}
           onClick={handleTerminalClick}
@@ -145,81 +158,92 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
           className={cn(
             "relative overflow-hidden",
             "h-7 px-3 text-xs font-medium",
-            "bg-black dark:bg-white",
-            "text-white dark:text-black",
-            "hover:bg-black/90 dark:hover:bg-white/90",
-            "hover:text-white dark:hover:text-black",
+            "bg-neutral-100 dark:bg-neutral-800", 
+            "text-neutral-800 dark:text-neutral-300", 
+            "hover:bg-neutral-200/80 dark:hover:bg-neutral-800/80",
             "transition-all duration-200",
             "group flex items-center gap-1",
             "rounded-lg shadow-none cursor-pointer"
           )}
         >
           {
-            isTeminalCopied ? (
-              <>
-              <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black"/>
-              </>
-            ) : (
-              <>
+            isTeminalCopied ? 
+              <CheckCheck className="h-3.5 w-3.5 text-neutral-800 dark:text-neutral-300"/> : 
               <Terminal className={cn(
                 "h-3.5 w-3.5",
                 "transition-all duration-200",
                 "group-hover:rotate-12"
               )}/>
-              </>
-            )
           }
-          <span>npx shadcn add {getFileName()}</span>
+          <span className="hidden sm:inline">npx shadcn add {getFileName()}</span>
+            <span className="sm:hidden">CLI</span>
         </Button>
 
-        {
-          !isBlock && (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleCopyClick();
-              }}
-            >
-              <Button
-                ref={copyButtonRef}
-                type="submit"
-                variant="ghost"
-                size="sm"
-                disabled={isPending}
-                className={cn(
-                  "relative overflow-hidden",
-                  "h-7 px-3 text-sm font-medium",
-                  "bg-black dark:bg-white",
-                  "text-white dark:text-black",
-                  "hover:bg-black/90 dark:hover:bg-white/90",
-                  "hover:text-white dark:hover:text-black",
-                  "transition-all duration-200",
-                  "group flex items-center gap-1",
-                  "rounded-lg shadow-none cursor-pointer"
-                )}
-              >
-                {
-                  isCopied ? (
-                    <>
-                    <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black"/>
-                    </>
-                  ) : (
-                    <>
-                    <Copy className={cn(
-                      "h-3.5 w-3.5",
-                      "transition-all duration-200",
-                      "group-hover:rotate-12"
-                    )}/>
-                    <span>Copy</span>
-                    </>
-                  )
-                }
-                <span>Copy</span>
-              </Button>
-            </form>
-          )
-        }
+        {!isBlock && (
+          <Button
+            ref={copyButtonRef}
+            onClick={handleCopyClick}
+            variant="ghost"
+            size="sm"
+            disabled={isPending} 
+            className={cn(
+              "h-7 px-3 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 hover:bg-neutral-200/80 dark:hover:bg-neutral-800/80 transition-colors",
+              "group flex items-center gap-1 rounded-lg min-w-[70px] cursor-pointer"
+            )}
+          >
+            {isPending ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            ) : isCopied ? (
+              <CheckCheck className="h-3.5 w-3.5" />
+            ) : (
+              <Copy className="h-3.5 w-3.5 group-hover:rotate-12 transition-transform" />
+            )}
+            <span>{isCopied ? "Copied" : "Copy"}</span>
+          </Button>
+        )}
       </div>
+
+      <AnimatePresence>
+        {showCode && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="relative mt-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 p-4 overflow-x-auto">
+              {isPending && !state.content ? (
+                <div className="flex items-center justify-center py-8 text-neutral-500 text-sm">
+                    <Loader2 className="h-4 w-4 animate-spin mr-2"/> Loading code...
+                </div>
+              ) : (
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  PreTag="div"
+                  customStyle={{
+                    margin: 0,
+                    padding: "1.5rem",
+                    background: "transparent",
+                    fontSize: "0.8rem",
+                    lineHeight: "1.5",
+                    border: "none",
+                  }}
+                  codeTagProps={{
+                    style: {
+                      backgroundColor: "transparent",
+                      fontFamily: "var(--font-mono), monospace"
+                    }
+                  }}
+                  wrapLongLines={true}
+                >
+                  {state.content}
+                </SyntaxHighlighter>
+              )}
+            </div>
+          </motion.div>
+          )}
+      </AnimatePresence>
     </div>
     </>
   )
