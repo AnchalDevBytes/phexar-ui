@@ -4,9 +4,10 @@ import { Sparkles } from "lucide-react";
 import { motion } from "motion/react"
 import { BrowseComponentsButton } from "@/components/ui/browse-button";
 import Features from "@/components/Landing/Features";
-import Link from "next/link";
 import Card02 from "@/components/phexarui/card/card-02";
 import HeroIntro from "@/components/Landing/HeroIntro";
+import AISearchbar from "@/components/phexarui/searchbars/ai-search-bar";
+import ElasticSearchbar from "@/components/phexarui/searchbars/elastic-search-bar";
 
 const HeroSection = () => {
   return (
@@ -60,7 +61,7 @@ const HeroSection = () => {
             {/* Action search bar */}
             <div className="w-full max-w-[600px] bg-transparent">
               <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-                Components
+                {/* Components */}
               </span>
               {/* <ActionSeachBar/> */}
             </div>
@@ -75,48 +76,12 @@ const HeroSection = () => {
             className="w-full"
           >
             <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-              AI Chat
+              AI Search Bar
             </span>
-            {/* <AIInput_04 /> */}
+            <AISearchbar/>
             <div className="w-full h-48 rounded-xl border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
-              {/* <AIInput_04 /> */}
+             <ElasticSearchbar/>
             </div>
-          </motion.div>
-
-          {/* Bottom row: Buttons on left, Input on right */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
-          >
-            <div className="w-full">
-                <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-                  Buttons
-              </span>
-            </div>
-
-            <div className="w-full h-48 rounded-xl border border-neutral-200 dark:border-neutral-800 flex flex-col gap-3 items-center justify-center">
-              <Link href={"/docs/components/button"}>
-                {/* Buttons */}
-              </Link>
-
-              <Link href={"/docs/components/button"}>
-                {/* Buttons */}
-              </Link>
-            </div>
-
-            <div className="w-full">
-              <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-                Input
-              </span>
-
-              <Link href={"/docs/components/input"}>
-                {/* Input */}
-              </Link>
-
-            </div>
-
           </motion.div>
 
         </div>

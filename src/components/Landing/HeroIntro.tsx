@@ -6,7 +6,7 @@ const HeroIntro = () => {
   const titleWords = "Craft Exquisite Interfaces in Minutes".split(" ");
 
   return (
-    <div className="mt-10 lg:-mt-40 flex flex-col items-start justify-center gap-8">
+    <div className="flex flex-col items-start justify-center gap-8">
       <motion.h1
         className={cn(
           "text-5xl md:text-7xl lg:text-8xl lg:tracking-tighter font-bold font-montserrat text-neutral-800 dark:text-neutral-100",
