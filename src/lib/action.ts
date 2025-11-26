@@ -8,14 +8,14 @@ const readFileCache = cache(async (filePath : string) => {
 })
 
 export const getComponent = async (filename : string, folder : string) => {
-    const baseDir = path.join(process.cwd(), "components/phexarui");
+    const BASE_DIR = path.join(process.cwd(), "src", "components", "phexarui");
     if(!filename || filename === "undefined") {
-        const fullpath = path.join(baseDir, `${folder}.tsx`);
+        const fullpath = path.join(BASE_DIR, `${folder}.tsx`);
         return await readFileCache(fullpath);
     }
 
     console.log("here");
-    const fullpath = path.join(baseDir, folder, `${filename}.tsx`);
+    const fullpath = path.join(BASE_DIR, folder, `${filename}.tsx`);
     return await readFileCache(fullpath);
     
 }

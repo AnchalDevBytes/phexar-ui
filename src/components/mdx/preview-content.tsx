@@ -8,9 +8,8 @@ import {
   type RefObject
 } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Copy, CheckCheck, Terminal } from "lucide-react";
+import { Copy, CheckCheck, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { AnimatePresence, motion } from "motion/react";
 import { copyComponent } from "@/lib/action";
 
@@ -38,7 +37,7 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
     startTransition(async () => {
       const formData = new FormData();
       formData.append("folder", folder);
-      formData.append("filename", filename);
+      formData.append("filename", filename || "");
 
       fromAction(formData);
     })
@@ -59,11 +58,6 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
     }, 1000);
   }
 
-  const openInV0 = () => {
-    const [folder, filename] = link.split("/");
-    return filename ? filename : folder;
-  }
-
   useEffect(() => {
     if(state.error) {
       setShowLoginDialog(true);
@@ -75,7 +69,7 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
 
       setTimeout(() => {
         setIsCopied(false);
-      }, 1000);
+      }, 2000);
     }
   },[state])
 
@@ -140,114 +134,91 @@ const PreviewContent = ({ link, prePath, isBlock = false} : {
     <div 
       className={cn("relative mt-4", "rounded-xl p-3")}
       onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <a 
-          href={`${prePath}/preview/${link}`}
-          target="_blank"
-          rel="noreferrer"
+      <div className="flex justify-end items-center gap-2">
+        <Button
+          ref={terminalButtonRef}
+          onClick={handleTerminalClick}
+          variant={"ghost"}
+          size={"sm"}
           className={cn(
-            "flex flex-col gap-2",
-            "text-sm font-medium",
-            "text-neutral-800 dark:texnet-neutral-200",
-            "hover:text-neutral-600 dark:hover:text-neutral-400",
-            "transition-all duration-200 no-underline group"
+            "relative overflow-hidden",
+            "h-7 px-3 text-xs font-medium",
+            "bg-black dark:bg-white",
+            "text-white dark:text-black",
+            "hover:bg-black/90 dark:hover:bg-white/90",
+            "hover:text-white dark:hover:text-black",
+            "transition-all duration-200",
+            "group flex items-center gap-1",
+            "rounded-lg shadow-none cursor-pointer"
           )}
         >
-          Live Preview
-          <ArrowUpRight
-             className={cn(
-              "w-4 h-4", 
-              "transition-transform duration-200 group-hover:rotate-12"
-            )}
-          />
-        </a>
-
-        <div className="flex items-center gap-2">
-          <OpenInV0Button name={openInV0()}/>
-          <Button
-            ref={terminalButtonRef}
-            onClick={handleTerminalClick}
-            variant={"ghost"}
-            size={"sm"}
-            className={cn(
-              "relative overflow-hidden",
-              "h-7 px-3 text-xs font-medium",
-              "bg-black dark:bg-white",
-              "text-white dark:text-black",
-              "hover:bg-black/90 dark:hover:bg-white/90",
-              "hover:text-white dark:hover:text-black",
-              "transition-all duration-200",
-              "group flex items-center gap-1",
-              "rounded-lg shadow-none"
-            )}
-          >
-            {
-              isTeminalCopied ? (
-                <>
-                <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black"/>
-                </>
-              ) : (
-                <>
-                <Terminal className={cn(
-                  "h-3.5 w-3.5",
-                  "transition-all duration-200",
-                  "group-hover:rotate-12"
-                )}/>
-                </>
-              )
-            }
-            <span>npx shadcn add {getFileName()}</span>
-          </Button>
-
           {
-            !isBlock && (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleCopyClick();
-                }}
-              >
-                <Button
-                  ref={copyButtonRef}
-                  type="submit"
-                  variant="ghost"
-                  size="sm"
-                  disabled={!isPending}
-                  className={cn(
-                    "relative overflow-hidden",
-                    "h-7 px-3 text-sm font-medium",
-                    "bg-black dark:bg-white",
-                    "text-white dark:text-black",
-                    "hover:bg-black/90 dark:hover:bg-white/90",
-                    "hover:text-white dark:hover:text-black",
-                    "transition-all duration-200",
-                    "group flex items-center gap-1",
-                    "rounded-lg shadow-none"
-                  )}
-                >
-                  {
-                    isCopied ? (
-                      <>
-                      <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black"/>
-                      </>
-                    ) : (
-                      <>
-                      <Copy className={cn(
-                        "h-3.5 w-3.5",
-                        "transition-all duration-200",
-                        "group-hover:rotate-12"
-                      )}/>
-                      <span>Copy</span>
-                      </>
-                    )
-                  }
-                  <span>Copy</span>
-                </Button>
-              </form>
+            isTeminalCopied ? (
+              <>
+              <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black"/>
+              </>
+            ) : (
+              <>
+              <Terminal className={cn(
+                "h-3.5 w-3.5",
+                "transition-all duration-200",
+                "group-hover:rotate-12"
+              )}/>
+              </>
             )
           }
-        </div>
+          <span>npx shadcn add {getFileName()}</span>
+        </Button>
+
+        {
+          !isBlock && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleCopyClick();
+              }}
+            >
+              <Button
+                ref={copyButtonRef}
+                type="submit"
+                variant="ghost"
+                size="sm"
+                disabled={isPending}
+                className={cn(
+                  "relative overflow-hidden",
+                  "h-7 px-3 text-sm font-medium",
+                  "bg-black dark:bg-white",
+                  "text-white dark:text-black",
+                  "hover:bg-black/90 dark:hover:bg-white/90",
+                  "hover:text-white dark:hover:text-black",
+                  "transition-all duration-200",
+                  "group flex items-center gap-1",
+                  "rounded-lg shadow-none cursor-pointer"
+                )}
+              >
+                {
+                  isCopied ? (
+                    <>
+                    <CheckCheck className="h-3.5 w-3.5 text-white dark:text-black"/>
+                    </>
+                  ) : (
+                    <>
+                    <Copy className={cn(
+                      "h-3.5 w-3.5",
+                      "transition-all duration-200",
+                      "group-hover:rotate-12"
+                    )}/>
+                    <span>Copy</span>
+                    </>
+                  )
+                }
+                <span>Copy</span>
+              </Button>
+            </form>
+          )
+        }
       </div>
     </div>
     </>

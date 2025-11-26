@@ -15,8 +15,8 @@ interface PreviewProps {
 }
 
 const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : `https://phexar-ui.vercel.app/`;
+    ? `${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : `https://phexar-ui.vercel.app`;
 
 const Preview = ({
   children,
