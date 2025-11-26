@@ -2,6 +2,7 @@ import { Calendar, Code2, ExternalLink, Share2 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface Skill {
     name: string;
@@ -18,16 +19,16 @@ interface Card02Props {
 }
 
 const defaultProfile = {
-    name: "Eugene K",
-    role: "Senior Developer",
+    name: "Anchal Raj",
+    role: "Frontend Developer",
     image: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png",
     status: "Open to Work",
     skills: [
         { name: "Frontend", level: 5 },
+        { name: "UI/UX", level: 4 },
         { name: "Backend", level: 4 },
-        { name: "DevOps", level: 4 },
     ],
-    portfolio: "github.com/alexchen",
+    portfolio: "https://github.com/AnchalDevBytes/",
 } satisfies Required<Card02Props>;
 
 export default function Card02({
@@ -86,7 +87,7 @@ export default function Card02({
                                     "text-xs font-medium"
                                 )}
                             >
-                                <Calendar className="w-3 h-3" />
+                                <Calendar className="w-3 h-3 animate-pulse" />
                                 {status}
                             </div>
                         </div>
@@ -132,7 +133,7 @@ export default function Card02({
                     </div>
                 </div>
 
-                <div className="px-5 pb-5 flex gap-2 items-center">
+                <Link href={portfolio}>
                     <Button
                         variant="default"
                         size="sm"
@@ -141,22 +142,13 @@ export default function Card02({
                             "bg-neutral-900 dark:bg-neutral-100",
                             "hover:bg-neutral-700 dark:hover:bg-neutral-300",
                             "text-white dark:text-neutral-900",
-                            "shadow-xs"
+                            "shadow-xs cursor-pointer"
                         )}
                     >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         View Portfolio
                     </Button>
-                    <Button
-                        variant="ghost"
-                        className="flex items-center gap-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg p-1.5"
-                    >
-                        <Share2 className="w-4 h-4 text-neutral-900 dark:text-neutral-100" />
-                        <span className="text-sm text-neutral-900 dark:text-neutral-100">
-                            Share
-                        </span>
-                    </Button>
-                </div>
+                </Link>
             </div>
         </div>
     );
