@@ -8,6 +8,7 @@ import Card02 from "@/components/phexarui/card/card-02";
 import HeroIntro from "@/components/Landing/HeroIntro";
 import AISearchbar from "@/components/phexarui/searchbars/ai-search-bar";
 import ElasticSearchbar from "@/components/phexarui/searchbars/elastic-search-bar";
+import FocusBlurCard from "../phexarui/card/focus-blur-card";
 
 const HeroSection = () => {
   return (
@@ -52,18 +53,16 @@ const HeroSection = () => {
             {/* Card components */}
             <div className="w-full flex flex-col items-center justify-center">
               <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-                Card
+                {/* Card */}
               </span>
-              {/* card */}
-              <Card02/>
+              <FocusBlurCard/>
             </div>
 
-            {/* Action search bar */}
             <div className="w-full max-w-[600px] bg-transparent">
               <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
                 {/* Components */}
               </span>
-              {/* <ActionSeachBar/> */}
+              <Card02/>
             </div>
 
           </motion.div>
