@@ -6,10 +6,10 @@ import Features from "@/components/Landing/Features";
 import HeroIntro from "@/components/Landing/HeroIntro";
 import AISearchbar from "@/components/phexarui/searchbars/ai-search-bar";
 import ElasticSearchbar from "@/components/phexarui/searchbars/elastic-search-bar";
-import FocusBlurCard from "@/components/phexarui/card/focus-blur-card";
-import GhostStackCard from "@/components/phexarui/card/ghost-stack-card";
-import SensorCard from "@/components/phexarui/card/sensor-card";
-import DevCard from "@/components/phexarui/card/dev-card";
+import FocusBlurCard from "@/components/phexarui/cards/focus-blur-card";
+import GhostStackCard from "@/components/phexarui/cards/ghost-stack-card";
+import SensorCard from "@/components/phexarui/cards/sensor-card";
+import DevCard from "@/components/phexarui/cards/dev-card";
 
 const HeroSection = () => {
   return (

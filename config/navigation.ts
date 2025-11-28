@@ -32,7 +32,7 @@ export const navigationSection : NavSection[] = [
             {
                 id: 1,
                 title: "AIInput",
-                href: "/docs/components/ai-input",
+                href: "/docs/components/searchbars/ai-search-bar",
                 description: "AIInput",
                 count: 5,
             },

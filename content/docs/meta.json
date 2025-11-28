@@ -8,13 +8,12 @@
         "---Get Started---",
         "index",
         "---Latest---",
-        "components/action-search-bar",
-        "components/searchbars",
+        "components/cards",
         "---Blocks---",
         "blocks/ai-card-generation",
         "---Components---",
+        "components/cards",
         "components/searchbars",
-        "components/ai-input",
         "---Hooks---",
         "hooks/use-auto-resize-textarea"
     ]

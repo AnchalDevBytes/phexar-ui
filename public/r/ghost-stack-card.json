@@ -1,0 +1,16 @@
+{
+  "name": "ghost-stack-card",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { ArrowUpRight } from \"lucide-react\";\nimport { motion } from \"motion/react\";\n\nconst GhostStackCard = () => {\n  return (\n    <motion.div \n      whileHover=\"hover\"\n      className={cn(\n        \"group relative\",\n        \"w-full max-w-sm cursor-pointer\"\n      )}\n    >\n      {/* The Ghost Layer */}\n      <motion.div \n        variants={{\n          hover: { translateX: 10, translateY: 10, rotate: 2 }\n        }}\n        transition={{ duration: 0.3, ease: \"easeOut\" }}\n        className={cn(\n          \"absolute inset-0\", \n          \"rounded-2xl border border-neutral-300 dark:border-neutral-700\", \n          \"bg-neutral-200 dark:bg-neutral-800\"\n        )}\n      />\n\n      {/* Top Layer */}\n      <div \n        className={cn(\n          \"relative transition-colors z-10\",\n          \"bg-white dark:bg-neutral-950\",\n          \"h-full rounded-2xl p-6 flex flex-col justify-between \",\n          \" border border-neutral-200 dark:border-neutral-800\",\n        )}\n      >\n        <div>\n          <div className={cn(\n            \"w-10 h-10 rounded-full flex items-center justify-center\",\n            \"bg-neutral-100 dark:bg-neutral-900\"\n          )}>\n            <div className={cn(\n              \"h-4 w-4  rounded-sm\",\n              \"group-hover:bg-neutral-800 dark:group-hover:bg-neutral-200\",\n              \"bg-neutral-400 dark:bg-neutral-600\"\n            )}/>\n          </div>\n\n          <h3 className=\"text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2\">\n            Ghost Stack Card\n          </h3>\n          <p className=\"text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed\">\n            A deep dive into the semantics of modern UI design and how depth perception affects user retention.\n          </p>\n        </div>\n\n        <div className={cn(\n          \"mt-8 flex items-center justify-between pt-4\",\n          \"border-t border-neutral-100 dark:border-neutral-900\"\n        )}>\n          <span className=\"text-sm font-medium text-neutral-400 uppercase\">\n            Article\n          </span>\n          <ArrowUpRight className={cn(\n            \"w-4 h-4 text-neutral-400 transition-colors\",\n            \"group-hover:text-neutral-800 dark:group-hover:text-neutral-200\"\n          )}/> \n        </div>\n      </div>  \n    </motion.div>\n  )\n}\n\nexport default GhostStackCard;\n",
+      "path": "/src/components/phexarui/cards/ghost-stack-card.tsx",
+      "target": "components/phexarui/ghost-stack-card.tsx"
+    }
+  ]
+}

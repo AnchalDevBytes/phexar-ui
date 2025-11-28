@@ -1,0 +1,16 @@
+{
+  "name": "focus-blur-card",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { motion } from \"motion/react\";\nimport Image from \"next/image\";\n\nconst FocusBlurCard = () => {\n  return (\n    <motion.div\n        className={cn(\n            \"relative group cursor-pointer\",\n            \"w-full max-w-sm h-80 rounded-2xl overflow-hidden\",\n            \"bg-neutral-100 dark:bg-neutral-900\",\n        )}\n        whileHover=\"hover\"\n    >\n        <div className={cn(\n            \"absolute inset-0\",\n            \"flex items-center justify-center\",\n            \"bg-neutral-200 dark:bg-neutral-800\"\n        )}>\n            <Image\n                src={`/img.png`}\n                alt=\"Image\"\n                width={250}\n                height={40}\n                className=\"w-full object-contain\"\n            />\n        </div>\n\n        {/* Overlay Gradient */}\n        <div className={cn(\n            \"absolute inset-0\",\n            \"bg-linear-to-t from-black/80 via-black/20 to-transparent\",\n            \"opacity-60 group-hover:opacity-90\",\n            \"transition-opacity duration-500\"\n        )}/>\n\n        <div className={cn(\n            \"absolute bottom-0 left-0 right-0\",\n            \"p-6 flex flex-col justify-end h-full\"\n        )}>\n            <motion.div\n                variants={{\n                    hover : { y: 0 }\n                }}\n                initial={{ y: 20 }}\n                transition={{ duration: 0.4, ease: \"easeOut\" }}\n            >\n                <motion.h3\n                    className=\"text-2xl font-bold text-white mb-2\"\n                    variants={{\n                        hover : { filter: \"blur(0px)\", scale: 1}\n                    }}\n                    initial={{ filter: \"blur(2px)\", scale: 0.98 }}\n                    transition={{ duration: 0.4 }}\n                >\n                    Frontend Developer\n                </motion.h3>\n\n                <motion.p\n                    className=\"text-sm text-neutral-300 overflow-hidden\"\n                    variants={{\n                        hover: { height: \"auto\", opacity: 1, marginTop: 8 }\n                    }}\n                    initial={{ height: 0, opacity: 0, marginTop: 0}}\n                    transition={{ duration: 0.4 }}\n                >\n                    Almost a year of experience with frontend development . Specialized in React, Next.js, Tailwind CSS, Motion and TypeScript. \n                </motion.p>\n            </motion.div>\n        </div>\n\n    </motion.div>\n  )\n}\n\nexport default FocusBlurCard;\n",
+      "path": "/src/components/phexarui/cards/focus-blur-card.tsx",
+      "target": "components/phexarui/focus-blur-card.tsx"
+    }
+  ]
+}
