@@ -31,7 +31,7 @@ export const navigationSection : NavSection[] = [
         items: [
             {
                 id: 1,
-                title: "AIInput",
+                title: "AISearchbar",
                 href: "/docs/components/searchbars/ai-search-bar",
                 description: "AIInput",
                 count: 5,
