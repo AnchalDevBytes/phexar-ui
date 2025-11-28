@@ -21,7 +21,7 @@ const ElasticSearchbar = () => {
             onClick={() => !isOpen && setIsOpen(true)} 
             className={cn(
                 "relative flex items-center bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full overflow-hidden shadow-sm",
-                isOpen ? "w-80 cursor-text" : "w-12 h-12 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-500 ease-in-out"
+                isOpen ? "sm:w-80 cursor-text" : "w-12 h-12 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-500 ease-in-out"
             )}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
