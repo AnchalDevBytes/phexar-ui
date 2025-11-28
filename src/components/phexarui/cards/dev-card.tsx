@@ -29,7 +29,7 @@ const defaultProfile = {
       { name: "UI/UX", level: 4 },
       { name: "Backend", level: 3 },
     ],
-    portfolio: "https://github.com/AnchalDevBytes/",
+    portfolio: "https://phexar-ui.vercel.app/",
 } satisfies Required<DevCardProps>;
 
 const DevCard = ({
