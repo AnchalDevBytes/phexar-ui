@@ -1,90 +1,81 @@
 'use client';
 
-import { Sparkles } from "lucide-react";
 import { motion } from "motion/react"
 import { BrowseComponentsButton } from "@/components/ui/browse-button";
 import Features from "@/components/Landing/Features";
-import Card02 from "@/components/phexarui/card/card-02";
 import HeroIntro from "@/components/Landing/HeroIntro";
 import AISearchbar from "@/components/phexarui/searchbars/ai-search-bar";
 import ElasticSearchbar from "@/components/phexarui/searchbars/elastic-search-bar";
-import FocusBlurCard from "../phexarui/card/focus-blur-card";
+import FocusBlurCard from "@/components/phexarui/card/focus-blur-card";
+import GhostStackCard from "@/components/phexarui/card/ghost-stack-card";
+import SensorCard from "@/components/phexarui/card/sensor-card";
+import DevCard from "@/components/phexarui/card/dev-card";
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 md:py-16 lg:py-20">
-        {/* left side title and cta */}
-        <div className="w-full lg:w-[45%] flex-col items-start text-left space-y-8">
-            <HeroIntro/>
+    <>
+      <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 md:py-16 lg:py-20">
+
+          <div className="w-full lg:w-[45%] flex-col items-start text-left space-y-8">
+              <HeroIntro/>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex flex-col justify-start w-full"
+              >
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3">
+                  <BrowseComponentsButton/>
+                </div>
+              </motion.div>
+
+              <Features/>
+          </div>
+
+          <div className="w-full lg:w-[55%] flex flex-col justify-between gap-6 lg:pl-8">
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col justify-start w-full"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center"
             >
-              <span className="text-sm text-neutral-500 dark:text-neutral-300 pb-3 text-start flex items-center gap-2">
-                <span className="flex items-center gap-1.5">
-                  Now updated with Tailwindcss v4
-                  <span className="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/30 px-2 py-1 text-xs font-medium text-red-800 dark:text-red-300">
-                    <Sparkles className="mr-1 h-4 w-4" />
-                    New
-                  </span>
-                </span>
-              </span>
+              <div className="w-full">
+                <FocusBlurCard/>
+              </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3">
-                <BrowseComponentsButton/>
+              <div className="w-full max-w-[600px] bg-transparent">
+                <DevCard/>
               </div>
             </motion.div>
 
-            <Features/>
-        </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full flex flex-col gap-2"
+            >
+              <div className="w-full h-48 rounded-xl sm:border sm:border-neutral-200 sm:dark:border-neutral-800 flex items-center justify-center">
+                <AISearchbar/>
+              </div>
+              <div className="w-full h-48 rounded-xl sm:border sm:border-neutral-200 sm:dark:border-neutral-800 flex items-center justify-center">
+                <ElasticSearchbar/>
+              </div>
+            </motion.div>
 
-        {/* right side - coomponent layouts */}
-        <div className="w-full lg:w-[55%] flex flex-col justify-between gap-6 lg:pl-8">
-          {/* top row : card + action search bar */}
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center"
-          >
-            {/* Card components */}
-            <div className="w-full flex flex-col items-center justify-center">
-              <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-                {/* Card */}
-              </span>
-              <FocusBlurCard/>
-            </div>
-
-            <div className="w-full max-w-[600px] bg-transparent">
-              <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-                {/* Components */}
-              </span>
-              <Card02/>
-            </div>
-
-          </motion.div>
-
-           {/* Middle row: AI Chat */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full"
-          >
-            <span className="text-sm text-neutral-500 dark:text-neutral-400 block text-center mb-2">
-              AI Search Bar
-            </span>
-            <AISearchbar/>
-            <div className="w-full h-48 rounded-xl border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
-             <ElasticSearchbar/>
-            </div>
-          </motion.div>
-
-        </div>
-    </div>
+          </div>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-center pb-10 gap-8 px-4 sm:px-6"
+      >
+        <GhostStackCard/>
+        <SensorCard/>
+      </motion.div>
+    </>
   )
 }
 
