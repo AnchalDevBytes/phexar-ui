@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PhexarUI
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+  <h3>Craft Exquisite Interfaces in Minutes.</h3>
+  <p>
+    A collection of high-quality, copy-paste React components built with <strong>Tailwind CSS v4</strong> and <strong>Motion</strong>. Designed for the modern web with a focus on micro-interactions and neutral aesthetics.
+  </p>
+
+  [**Explore the Docs**](https://phexar-ui.vercel.app) · [**Browse Components**](https://phexar-ui.vercel.app/docs) · [**Report Bug**](https://github.com/AnchalDevBytes/phexar-ui/issues)
+
+</div>
+
+---
+
+## ✨ Philosophy
+
+PhexarUI is not a component library you install as a dependency. It is a collection of reusable code that you copy and paste into your project.
+
+*   **Neutral by Default:** Designed to fit into any brand identity without fighting for attention.
+*   **Micro-interactions:** Every component features subtle, thoughtful animations powered by `motion/react`.
+*   **Tailwind v4 Native:** Built for the future of CSS, leveraging the new engine and CSS variables.
+*   **Copy & Paste:** You own the code. Customize it, break it, make it yours.
+
+## 🛠️ Tech Stack
+
+*   **Framework:** [React](https://react.dev) / [Next.js](https://nextjs.org)
+*   **Styling:** [Tailwind CSS v4](https://tailwindcss.com)
+*   **Animations:** [Motion](https://motion.dev) (formerly Framer Motion)
+*   **Icons:** [Lucide React](https://lucide.dev)
+*   **Utils:** `clsx` & `tailwind-merge`
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+
+Ensure your project is set up with Tailwind CSS v4. Then, install the core dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install motion lucide-react clsx tailwind-merge
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Utility Function
+Ensure you have a `cn` helper function (standard in the shadcn ecosystem) in `lib/utils.ts`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
 
-## Learn More
+## Usage
+You can add components to your project via the CLI or by manually copying the code from the documentation.
 
-To learn more about Next.js, take a look at the following resources:
+### Option A: CLI (Recommended)
+To add the Elastic Search Bar, for example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option B: Manual Copy
+1. Browse the Documentation.
+2. Select a component.
+3. Click "View Code" or "Copy".
+4. Paste it into your project (e.g., components/phexarui/cards/dev-card.tsx).
 
-## Deploy on Vercel
+<hr/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+Built with ❤️ by <a href="https://github.com/AnchalDevBytes">Anchal Raj</a>
+</div>
