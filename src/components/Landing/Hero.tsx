@@ -12,6 +12,9 @@ import SensorCard from "@/components/phexarui/cards/sensor-card";
 import DevCard from "@/components/phexarui/cards/dev-card";
 import DetailedPopoverAvatar from "@/components/phexarui/avatars/detailed-popover-avatar";
 import MagneticStack from "@/components/phexarui/avatars/magnetic-stack";
+import Breadcrumb01 from "@/components/phexarui/breadcrumbs/breadcrumb01";
+import Breadcrumb03 from "@/components/phexarui/breadcrumbs/breadcrumb03";
+import Breadcrumb02 from "@/components/phexarui/breadcrumbs/breadcrumb02";
 
 const HeroSection = () => {
   return (
@@ -76,9 +79,15 @@ const HeroSection = () => {
       >
         <GhostStackCard/>
         <SensorCard/>
-        
+
         <DetailedPopoverAvatar/>
         <MagneticStack/>
+            
+            {/* The collapsible glass one */}
+            <Breadcrumb01/>
+            <Breadcrumb02/>
+            <Breadcrumb03/>
+            
       </motion.div>
     </>
   )
