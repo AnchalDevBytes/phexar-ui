@@ -10,6 +10,8 @@ import FocusBlurCard from "@/components/phexarui/cards/focus-blur-card";
 import GhostStackCard from "@/components/phexarui/cards/ghost-stack-card";
 import SensorCard from "@/components/phexarui/cards/sensor-card";
 import DevCard from "@/components/phexarui/cards/dev-card";
+import DetailedPopoverAvatar from "@/components/phexarui/avatars/detailed-popover-avatar";
+import MagneticStack from "@/components/phexarui/avatars/magnetic-stack";
 
 const HeroSection = () => {
   return (
@@ -74,6 +76,9 @@ const HeroSection = () => {
       >
         <GhostStackCard/>
         <SensorCard/>
+        
+        <DetailedPopoverAvatar/>
+        <MagneticStack/>
       </motion.div>
     </>
   )
