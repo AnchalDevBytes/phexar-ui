@@ -15,6 +15,9 @@ import MagneticStack from "@/components/phexarui/avatars/magnetic-stack";
 import Breadcrumb01 from "@/components/phexarui/breadcrumbs/breadcrumb01";
 import Breadcrumb03 from "@/components/phexarui/breadcrumbs/breadcrumb03";
 import Breadcrumb02 from "@/components/phexarui/breadcrumbs/breadcrumb02";
+import Carousel01 from "../phexarui/carousel/carousel01";
+import Carousel02 from "../phexarui/carousel/carousel02";
+import Carousel03 from "../phexarui/carousel/carousel03";
 
 const HeroSection = () => {
   return (
@@ -83,10 +86,13 @@ const HeroSection = () => {
         <DetailedPopoverAvatar/>
         <MagneticStack/>
             
-            {/* The collapsible glass one */}
             <Breadcrumb01/>
             <Breadcrumb02/>
             <Breadcrumb03/>
+
+            <Carousel01/>
+            <Carousel02/>
+            <Carousel03/>
             
       </motion.div>
     </>
