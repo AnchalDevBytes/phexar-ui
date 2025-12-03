@@ -14,9 +14,9 @@ interface PopoverAvatarProps {
 
 
 const DetailedPopoverAvatar = ({ 
-  src="/img.png", 
-  name="Anchal Raj", 
-  username="AnchalRaj", 
+  src="/img1.jpg", 
+  name="Priya", 
+  username="Priya123", 
   location="India" 
 } : PopoverAvatarProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);

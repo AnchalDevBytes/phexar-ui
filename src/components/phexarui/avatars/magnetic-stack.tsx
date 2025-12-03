@@ -10,16 +10,16 @@ interface AvatarItem {
 }
 
 const defaultUsers : AvatarItem[] = [
-    { id: 1, img: "/img.png", name: "Anchal Raj" },
-    { id: 2, img: "/img.png", name: "Anchal Raj" }, 
-    { id: 3, img: "/img.png", name: "Anchal Raj" },
+    { id: 1, img: "/img1.jpg", name: "Priya" },
+    { id: 2, img: "/img2.jpg", name: "Surbhi" }, 
+    { id: 3, img: "/img3.jpg", name: "Piyush" },
     { id: 4, img: "/img.png", name: "Anchal Raj" },
-    { id: 5, img: "/img.png", name: "Anchal Raj" },
-    { id: 6, img: "/img.png", name: "Anchal Raj" },
+    { id: 5, img: "/img1.jpg", name: "Priya" },
+    { id: 6, img: "/img3.jpg", name: "Piyush" },
     { id: 7, img: "/img.png", name: "Anchal Raj" },
-    { id: 8, img: "/img.png", name: "Anchal Raj" },
-    { id: 9, img: "/img.png", name: "Anchal Raj" },
-    { id: 10, img: "/img.png", name: "Anchal Raj" },
+    { id: 8, img: "/img3.jpg", name: "Piyush" },
+    { id: 9, img: "/img1.jpg", name: "Priya" },
+    { id: 10, img: "/img3.jpg", name: "Piyush" },
 ];
 
 
