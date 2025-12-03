@@ -19,7 +19,7 @@ const defaultItems : BreadCrumbItem[] = [
     { label: "Details", href: "/details" }
 ]
 
-const Breadcrumb01 = ( { items = defaultItems } : { items?: BreadCrumbItem[] }) => {
+const GlassPillBreadcrumb = ( { items = defaultItems } : { items?: BreadCrumbItem[] }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const shouldCollapse = items.length > 4 && !isExpanded;
@@ -86,4 +86,4 @@ const Breadcrumb01 = ( { items = defaultItems } : { items?: BreadCrumbItem[] }) 
   )
 }
 
-export default Breadcrumb01;
+export default GlassPillBreadcrumb;

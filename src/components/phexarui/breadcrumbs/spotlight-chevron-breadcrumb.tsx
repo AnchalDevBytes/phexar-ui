@@ -18,7 +18,7 @@ const defaultItems : BreadcrumbItem[] = [
 ];
 
 
-const Breadcrumb02 = ({ items = defaultItems }: { items?: BreadcrumbItem[] }) => {
+const SpotlightChevronBreadcrumb = ({ items = defaultItems }: { items?: BreadcrumbItem[] }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -72,4 +72,4 @@ const Breadcrumb02 = ({ items = defaultItems }: { items?: BreadcrumbItem[] }) =>
   );
 };
 
-export default Breadcrumb02;
+export default SpotlightChevronBreadcrumb;

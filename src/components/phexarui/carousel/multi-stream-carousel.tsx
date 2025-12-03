@@ -6,15 +6,15 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const items = [
-  { id: 1, title: "Card One", img: "/img.png" },
-  { id: 2, title: "Card Two", img: "/img.png" },
-  { id: 3, title: "Card Three", img: "/img.png" },
-  { id: 4, title: "Card Four", img: "/img.png" },
-  { id: 5, title: "Card Five", img: "/img.png" },
-  { id: 6, title: "Card Six", img: "/img.png" },
+  { id: 1, title: "Card One", img: "/img3.jpg" },
+  { id: 2, title: "Card Two", img: "/img1.jpg" },
+  { id: 3, title: "Card Three", img: "/img2.jpg" },
+  { id: 4, title: "Card Four", img: "/img3.jpg" },
+  { id: 5, title: "Card Five", img: "/img1.jpg" },
+  { id: 6, title: "Card Six", img: "/img2.jpg" },
 ];
 
-const Carousel02 = () => {
+const MultiStreamCarousel = () => {
     const [currentIdx, setCurrentIdx] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -113,4 +113,4 @@ const Carousel02 = () => {
   )
 }
 
-export default Carousel02;
+export default MultiStreamCarousel;

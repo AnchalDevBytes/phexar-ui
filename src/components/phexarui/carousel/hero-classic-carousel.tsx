@@ -7,13 +7,13 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-    { id: 1, title: "Modern Architecture", img: "/img.png" },
-    { id: 2, title: "Urban Life", img: "/img.png" },
-    { id: 3, title: "Nature's Silence", img: "/img.png" },
+    { id: 1, title: "Modern Architecture", img: "/img2.jpg" },
+    { id: 2, title: "Urban Life", img: "/img1.jpg" },
+    { id: 3, title: "Nature's Silence", img: "/img3.jpg" },
     { id: 4, title: "Abstract Shapes", img: "/img.png" },
 ];
 
-const carousel01 = () => {
+const HeroClassicCarousel = () => {
     const [current, setCurrent] = useState(0);
     const [direction, setDirection] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
@@ -118,4 +118,4 @@ const carousel01 = () => {
   )
 }
 
-export default carousel01;
+export default HeroClassicCarousel;

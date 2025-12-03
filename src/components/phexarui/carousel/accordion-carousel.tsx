@@ -13,7 +13,7 @@ const Items = [
   { id: 4, title: "Space", img: "/img.png" },
 ];
 
-const Carousel03 = () => {
+const AccordionCarousel = () => {
     const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -67,4 +67,4 @@ const Carousel03 = () => {
   )
 }
 
-export default Carousel03;
+export default AccordionCarousel;

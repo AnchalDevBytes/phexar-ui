@@ -17,7 +17,7 @@ const defaultItems : BreadcrumbItem[] = [
     { label: "Details", href: "/details" }
 ];
 
-const Breadcrumb03 = ({ items = defaultItems} : { items?: BreadcrumbItem[]}) => {
+const SpotlightSlashBreadcrumb = ({ items = defaultItems} : { items?: BreadcrumbItem[]}) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -73,4 +73,4 @@ const Breadcrumb03 = ({ items = defaultItems} : { items?: BreadcrumbItem[]}) => 
   )
 }
 
-export default Breadcrumb03;
+export default SpotlightSlashBreadcrumb;
