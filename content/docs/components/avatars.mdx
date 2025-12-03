@@ -1,0 +1,31 @@
+---
+title: Avatars
+description: A collection of interactive and animated avatar components.
+icon: Users
+---
+
+### Detailed Popover
+
+A modern "squircle" avatar that reveals detailed user information on hover with a smooth spring animation. Perfect for author bylines, team grids, or admin panels where context is needed without clicking.
+
+import DetailedPopoverAvatar from "@/components/phexarui/avatars/detailed-popover-avatar";
+
+<Preview link="avatars/detailed-popover-avatar">
+    <div className="flex justify-center w-full py-10">
+        <DetailedPopoverAvatar />
+    </div>
+</Preview>
+
+---
+
+### Magnetic Stack
+
+An overlapping stack of avatars that react to cursor interaction with a "magnetic" lift. It automatically handles the `maxVisible` count and displays a dynamic `+N` indicator for the remaining users.
+
+import MagneticStack from "@/components/phexarui/avatars/magnetic-stack";
+
+<Preview link="avatars/magnetic-stack">
+    <div className="flex justify-center w-full py-4">
+        <MagneticStack />
+    </div>
+</Preview>

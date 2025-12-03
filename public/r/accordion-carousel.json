@@ -1,0 +1,16 @@
+{
+  "name": "accordion-carousel",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { easeOut, motion } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\nimport { useState } from \"react\";\nimport Image from \"next/image\";\nimport { Plus } from \"lucide-react\";\n\n\nconst Items = [\n  { id: 1, title: \"Urban\", img: \"/img.png\" },\n  { id: 2, title: \"Nature\", img: \"/img.png\" },\n  { id: 3, title: \"Ocean\", img: \"/img.png\" },\n  { id: 4, title: \"Space\", img: \"/img.png\" },\n];\n\nconst AccordionCarousel = () => {\n    const [hovered, setHovered] = useState<number | null>(null);\n\n  return (\n    <div className=\"flex gap-2 w-full h-[300px]\">\n        {Items.map((item) => (\n            <motion.div\n                key={item.id}\n                onMouseEnter={() => setHovered(item.id)}\n                onMouseLeave={() => setHovered(null)}\n                className={cn(\n                    \"relative rounded-xl overflow-hidden cursor-pointer\",\n                    \"bg-neutral-200 dark:bg-neutral-800\",\n                    \"border border-neutral-200 dark:border-neutral-800\"\n                )}\n                animate={{ flex: hovered === item.id ? 3 : 1 }}\n                transition={{ duration: 0.4, ease: easeOut }}\n            >\n                <Image  \n                    src={item.img}\n                    alt={item.title}\n                    fill\n                    className={cn(\n                        \"object-cover transition-transform duration-500\",\n                        hovered === item.id ? \"scale-110\" : \"scale-100 opacity-70\"\n                    )}\n                />\n\n                <div className=\"absolute inset-0 p-4 flex flex-col justify-end bg-linear-to-r from-black/60 to-transparent\">\n                    {hovered === item.id ? (\n                        <motion.div\n                            initial={{ y: 10, opacity: 0 }}\n                            animate={{ y: 0, opacity: 1 }}\n                            className=\"text-white\"\n                        >\n                            <h3 className=\"text-xl font-bold\">{item.title}</h3>\n                            <p className=\"text-xs text-neutral-300\">\n                                Beautiful place to visit.\n                            </p>\n                        </motion.div>\n                    ) : (\n                        <div className=\"absolute bottom-4 left-1/2 -translate-x-1/2\">\n                            <div className=\"w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center\">\n                                <Plus className=\"text-white w-4 h-4\"/>\n                            </div>\n                        </div>\n                    )}\n                </div>\n            </motion.div>\n        ))}\n    </div>\n  )\n}\n\nexport default AccordionCarousel;\n",
+      "path": "/src/components/phexarui/carousel/accordion-carousel.tsx",
+      "target": "components/phexarui/accordion-carousel.tsx"
+    }
+  ]
+}

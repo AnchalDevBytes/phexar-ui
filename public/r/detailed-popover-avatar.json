@@ -1,0 +1,16 @@
+{
+  "name": "detailed-popover-avatar",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport Image from \"next/image\";\nimport { useState } from \"react\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { MapPin } from \"lucide-react\";\n\ninterface PopoverAvatarProps {\n  src?: string;\n  name?: string;\n  username?: string;\n  location?: string;\n}\n\n\nconst DetailedPopoverAvatar = ({ \n  src=\"/img1.jpg\", \n  name=\"Priya\", \n  username=\"Priya123\", \n  location=\"India\" \n} : PopoverAvatarProps) => {\n  const [isHovered, setIsHovered] = useState<boolean>(false);\n\n  return (\n    <div className=\"relative flex items-center justify-center\">\n      <motion.div \n        className={cn(\n          \"relative w-14 h-14 cursor-pointer z-10\", \n          \"rounded-[18px] overflow-hidden\",\n          \"border border-neutral-200 dark:border-neutral-800\",\n          isHovered ? \"ring-2 ring-neutral-900 dark:ring-neutral-100 ring-offset-2 ring-offset-white dark:ring-offset-black\" : \"\"\n        )}\n        onMouseEnter={() => setIsHovered(true)}\n        onMouseLeave={() => setIsHovered(false)}\n        whileTap={{ scale: 0.95 }}\n      >\n        <Image\n          src={src}\n          alt={name}\n          width={56}\n          height={56}\n          className=\"w-full h-full object-cover\"\n        />\n      </motion.div>\n\n      <AnimatePresence>\n        {isHovered && (\n          <motion.div\n            initial={{ opacity: 0, y: 10, scale: 0.9 }}\n            animate={{ opacity: 1, y: -80, scale: 1 }}\n            exit={{ opacity: 0, y: 10, scale: 0.9 }}\n            transition={{ type: \"spring\", stiffness: 300, damping: 20 }}\n            className={cn(\n              \"absolute z-20 w-48 p-3 rounded-xl\",\n              \"bg-white dark:bg-neutral-900\",\n              \"border border-neutral-200 dark:border-neutral-800\",\n              \"shadow-xl pointer-events-none\"\n            )}\n          >\n            <div className=\"flex flex-col items-center justify-center\">\n              <span className=\"text-sm font-bold text-neutral-900 dark:text-neutral-100\">{name}</span>\n              <span className=\"text-sm text-neutral-500 mb-2\">@{username}</span>\n\n              <div className=\"flex items-center gap-1 px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-[10px] text-neutral-600 dark:text-neutral-400\">\n                <MapPin size={10}/>\n                {location}\n              </div>\n            </div>\n\n            <div className=\"absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-neutral-900 border-b border-r border-neutral-200 dark:border-neutral-800 rotate-45\"/>\n\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </div>\n  )\n}\n\nexport default DetailedPopoverAvatar;\n",
+      "path": "/src/components/phexarui/avatars/detailed-popover-avatar.tsx",
+      "target": "components/phexarui/detailed-popover-avatar.tsx"
+    }
+  ]
+}

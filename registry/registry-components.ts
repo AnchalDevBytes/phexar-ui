@@ -68,5 +68,93 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ],
+    },
+    {
+        name: "magnetic-stack",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/avatars/magnetic-stack.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "detailed-popover-avatar",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/avatars/detailed-popover-avatar.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "glass-pill-breadcrumb",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/breadcrumbs/glass-pill-breadcrumb.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "spotlight-chevron-breadcrumb",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/breadcrumbs/spotlight-chevron-breadcrumb.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "spotlight-slash-breadcrumb",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/breadcrumbs/spotlight-slash-breadcrumb.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "accordion-carousel",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/carousel/accordion-carousel.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "hero-classic-carousel",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/carousel/hero-classic-carousel.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "multi-stream-carousel",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/carousel/multi-stream-carousel.tsx",
+                type: "registry:component",
+            }
+        ]
     }
 ]
