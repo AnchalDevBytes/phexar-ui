@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, delay, motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { ShieldCheck, X } from "lucide-react";

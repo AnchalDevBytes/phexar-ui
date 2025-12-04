@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { AnimatePresence, easeOut, motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

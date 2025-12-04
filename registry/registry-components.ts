@@ -156,5 +156,27 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ]
+    },
+    {
+        name: "simple-dialog",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/dialogs/simple-dialog.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "depth-stack-dialog",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/dialogs/depth-stack-dialog.tsx",
+                type: "registry:component",
+            }
+        ],
     }
 ]
