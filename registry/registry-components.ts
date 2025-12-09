@@ -178,5 +178,27 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ],
+    },
+    {
+        name: "simple-bento",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/bento-grids/simple-bento.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "feature-showcase-bento",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/bento-grids/feature-showcase-bento.tsx",
+                type: "registry:component",
+            }
+        ],
     }
 ]
