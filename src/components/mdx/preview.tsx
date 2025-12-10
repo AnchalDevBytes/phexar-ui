@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils"
 import PreviewContent from "@/components/mdx/preview-content";
 
-
 interface PreviewProps {
   children: React.ReactNode;
   className?: string;
@@ -33,7 +32,7 @@ const Preview = ({
     <div className={cn(
       "w-full overflow-hidden", className
     )}>
-      <PreviewContent link={link} prePath={prePath} isBlock={isBlock}/>
+      <PreviewContent link={link} prePath={prePath} isBlock={isBlock}>
         {
           useIframe ? (
             <div className="w-full my-4 border rounded-2xl border-neutral-400 dark:border-neutral-700">
@@ -59,6 +58,7 @@ const Preview = ({
             </div>
           )
         }
+        </PreviewContent>
 
         {comment.length > 0 && (
           <div className="flex flex-wrap gap-3 mt-6">

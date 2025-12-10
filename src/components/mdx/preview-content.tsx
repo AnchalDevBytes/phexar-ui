@@ -15,10 +15,11 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-const PreviewContent = ({ link, prePath, isBlock = false }: {
+const PreviewContent = ({ link, prePath, isBlock = false, children }: {
   link: string;
   prePath: string;
   isBlock?: boolean;
+  children?: React.ReactNode
 }) => {
 
   const [isPending, startTransition] = useTransition();
@@ -113,7 +114,7 @@ const PreviewContent = ({ link, prePath, isBlock = false }: {
   }
 
   return (
-    <>
+    <div className="relative my-4">
 
       {isTeminalCopied && (
         <SuccessParticles buttonRef={terminalButtonRef as RefObject<HTMLButtonElement>} />
@@ -165,6 +166,10 @@ const PreviewContent = ({ link, prePath, isBlock = false }: {
           </Button>
         </div>
 
+        <div className="relative">
+          {children}
+        </div>
+
         <AnimatePresence>
           {showCode && (
             <motion.div
@@ -206,7 +211,17 @@ const PreviewContent = ({ link, prePath, isBlock = false }: {
                         </div>
                     )}
 
-                    <div className="max-h-[500px] overflow-y-auto p-4 overflow-x-auto custom-scrollbar">
+                    <motion.div 
+                      layout
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className={cn(
+                        "max-h-[450px] overflow-y-auto p-4 overflow-x-auto custom-scrollbar",
+                        "mask-[linear-gradient(to_bottom,black_80%,transparent_100%)]",
+                      )}
+                    >
                       <SyntaxHighlighter
                         language="tsx"
                         style={vscDarkPlus}
@@ -215,7 +230,7 @@ const PreviewContent = ({ link, prePath, isBlock = false }: {
                           margin: 0,
                           paddingRight: "4rem",
                           background: "transparent",
-                          fontSize: "1.5rem",
+                          fontSize: "1.2rem",
                           lineHeight: "1",
                           border: "none",
                           overflow: "visible",  //to removes the duplicate scrollbar
@@ -230,7 +245,7 @@ const PreviewContent = ({ link, prePath, isBlock = false }: {
                       >
                         {state.content}
                       </SyntaxHighlighter>
-                    </div>
+                    </motion.div>
                   </>
                 )}
               </div>
@@ -238,7 +253,7 @@ const PreviewContent = ({ link, prePath, isBlock = false }: {
           )}
         </AnimatePresence>
       </div>
-    </>
+    </div>
   )
 }
 
