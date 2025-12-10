@@ -1,0 +1,16 @@
+{
+  "name": "floating-label-input",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { motion } from \"motion/react\";\nimport { useState } from \"react\";\n\nconst FloatingLabelInput = (props : React.InputHTMLAttributes<HTMLInputElement>) => {\n    const [isFocused, setIsFocused] = useState<boolean>(false);\n    const [value, setValue] = useState<string>(\"\");\n\n    const isActive = isFocused || value.length > 0;\n\n  return (\n    <div className=\"w-full max-w-sm pt-4\">\n        <div className={cn(\n            \"relative transition-all duration-300\",\n            isFocused\n                ? \"border border-neutral-900 dark:border-neutral-100 rounded-md\"\n                : \"border-b border-neutral-300 dark:border-neutral-700\"\n        )}>\n            <motion.label\n                initial={false}\n                animate={{\n                    y: isActive ? -24 : 0,\n                    scale: isActive ? 0.85 : 1,\n                    x: isActive ? 4 : 0,\n                }}\n                transition={{ type: \"spring\", stiffness: 300, damping: 30 }}\n                className={cn(\n                    \"absolute left-5 top-2.5 cursor-text origin-top-left\",\n                    \"text-neutral-500 dark:text-neutral-400 font-medium\",\n                    \"px-1 z-10\",\n                    isActive \n                        ? \"bg-white dark:bg-black text-neutral-900 dark:text-neutral-100\"\n                        : \"bg-transparent\"\n                )}\n            >\n                {props.placeholder || \"Your Name\"}\n            </motion.label>\n            <input\n                {...props}\n                placeholder=\"\"\n                value={value}\n                onChange={(e) => {\n                    setValue(e.target.value);\n                    props.onChange?.(e);\n                }}\n                onFocus={() => setIsFocused(true)}\n                onBlur={() => setIsFocused(false)}\n                className={cn(\n                    \"w-full bg-transparent py-2 px-5 outline-none\",\n                    \"text-neutral-900 dark:text-neutral-100\",\n                    \"placeholder:opacity-0\"\n                )}\n            />\n        </div>\n    </div>\n  )\n}\n\nexport default FloatingLabelInput;\n",
+      "path": "/src/components/phexarui/inputs/floating-label-input.tsx",
+      "target": "components/phexarui/floating-label-input.tsx"
+    }
+  ]
+}

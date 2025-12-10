@@ -200,5 +200,38 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ],
+    },
+    {
+        name: "shimmer-input",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/inputs/shimmer-input.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "floating-label-input",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/inputs/floating-label-input.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "smart-textarea",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/inputs/smart-textarea.tsx",
+                type: "registry:component",
+            }
+        ],
     }
 ]
