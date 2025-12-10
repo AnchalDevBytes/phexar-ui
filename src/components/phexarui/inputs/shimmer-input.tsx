@@ -43,7 +43,7 @@ const ShimmerInput = ({ label, className, ...props } : ShimmerInputProps) => {
             <input
                 {...props}
                 value={value}
-                placeholder="Type something..."
+                placeholder={props.placeholder || "Type here..."}
                 onChange={(e) => {
                     setValue(e.target.value);
                     props.onChange?.(e);

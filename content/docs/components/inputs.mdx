@@ -1,0 +1,45 @@
+---
+title: Inputs
+description: A collection of text fields with enhanced feedback states.
+icon: TextCursorInput
+---
+
+### Shimmer Input
+
+A high-end input field that features a moving gradient shimmer on its border when focused. Perfect for login or payment fields where you want to draw attention.
+
+import ShimmerInput from "@/components/phexarui/inputs/shimmer-input";
+
+<Preview link="inputs/shimmer-input">
+    <div className="w-full flex justify-center py-4">
+        <ShimmerInput label="Email Address" placeholder="name@example.com" />
+    </div>
+</Preview>
+
+---
+
+### Floating Label
+
+A modernized version of the classic floating label pattern. Using spring physics, the label moves smoothly out of the way when the user interacts with the field.
+
+import FloatingLabelInput from "@/components/phexarui/inputs/floating-label-input";
+
+<Preview link="inputs/floating-label-input">
+    <div className="w-full flex justify-center py-6">
+        <FloatingLabelInput placeholder="Full Name" />
+    </div>
+</Preview>
+
+---
+
+### Smart Textarea
+
+An intelligent text area that provides real-time feedback. It includes a subtle character count indicator that turns red as the limit approaches, and a visual progress ring.
+
+import SmartTextarea from "@/components/phexarui/inputs/smart-textarea";
+
+<Preview link="inputs/smart-textarea">
+    <div className="w-full flex justify-center py-4">
+        <SmartTextarea placeholder="Write your bio here..." />
+    </div>
+</Preview>
