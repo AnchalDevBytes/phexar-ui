@@ -9,6 +9,9 @@ import FocusBlurCard from "@/components/phexarui/cards/focus-blur-card";
 import GhostStackCard from "@/components/phexarui/cards/ghost-stack-card";
 import SensorCard from "@/components/phexarui/cards/sensor-card";
 import DevCard from "@/components/phexarui/cards/dev-card";
+import AnimatedGradientBorder from "../phexarui/animated-text/animated-gradient-border";
+import AnimatedText from "../phexarui/animated-text/animated-text";
+import VideoText from "../phexarui/animated-text/video-text";
 
 
 const HeroSection = () => {
@@ -75,7 +78,11 @@ const HeroSection = () => {
         <GhostStackCard/>
         <SensorCard/>
             
+        <AnimatedGradientBorder/>
+        <AnimatedText/>
+
       </motion.div>
+        <VideoText/>
     </>
   )
 }
