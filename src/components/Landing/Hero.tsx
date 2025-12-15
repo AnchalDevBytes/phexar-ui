@@ -12,6 +12,7 @@ import DevCard from "@/components/phexarui/cards/dev-card";
 import AnimatedGradientBorder from "../phexarui/animated-text/animated-gradient-border";
 import AnimatedText from "../phexarui/animated-text/animated-text";
 import VideoText from "../phexarui/animated-text/video-text";
+import BlogCard from "../phexarui/cards/blog-card";
 
 
 const HeroSection = () => {
@@ -82,7 +83,9 @@ const HeroSection = () => {
         <AnimatedText/>
 
       </motion.div>
-        <VideoText/>
+
+      <VideoText/>
+      <BlogCard/>
     </>
   )
 }
