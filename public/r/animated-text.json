@@ -1,0 +1,16 @@
+{
+  "name": "animated-text",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from '@/lib/utils';\nimport { motion } from 'motion/react';\n\nconst AnimatedText = () => {\n  return (\n    <div className='flex justify-center'>\n        <motion.h3\n            className={cn(\n                \"text-transparent bg-clip-text bg-linear-to-r from-neutral-500 via-neutral-900 to-neutral-500 dark:from-neutral-500 dark:via-neutral-100 dark:to-neutral-500\",\n                \"text-4xl leading-relaxed font-bold\"\n            )}\n            style={{ backgroundSize: \"300% 100%\"}}\n            animate={{\n                backgroundPosition: [\"0% 50%\", \"100% 50%\", \"0% 50%\"]\n            }}\n            transition={{\n                duration: 4,\n                repeat: Infinity,\n                ease: \"linear\"\n            }}\n        >\n            Animated Text\n        </motion.h3>\n    </div>\n  )\n}\n\nexport default AnimatedText;\n",
+      "path": "/src/components/phexarui/animated-text/animated-text.tsx",
+      "target": "components/phexarui/animated-text.tsx"
+    }
+  ]
+}

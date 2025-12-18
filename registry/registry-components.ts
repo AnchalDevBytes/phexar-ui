@@ -233,5 +233,71 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ],
+    },
+    {
+        name: "classic-accordion",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/accordion/classic-accordion.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "split-accordion",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/accordion/split-accordion.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "animated-gradient-border",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/animated-text/animated-gradient-border.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "animated-text",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/animated-text/animated-text.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "video-text",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/animated-text/video-text.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "blog-card",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/cards/blog-card.tsx",
+                type: "registry:component",
+            }
+        ],
     }
 ]

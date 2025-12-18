@@ -1,0 +1,43 @@
+---
+title: Animated Text
+description: Text effects ranging from gradient shimmers to video masking.
+icon: Type
+---
+
+### Gradient Border
+
+A button component where a synchronized gradient animation flows seamlessly through both the text and the border. It uses a masking technique to create a border-gradient effect.
+
+import AnimatedGradientBorder from "@/components/phexarui/animated-text/animated-gradient-border";
+
+<Preview link="animated-text/animated-gradient-border">
+    <div className="flex justify-center py-4">
+        <AnimatedGradientBorder />
+    </div>
+</Preview>
+
+---
+
+### Gradient Flow
+
+A heading component with a smooth, continuous color-shifting gradient background clipped to the text.
+
+import AnimatedText from "@/components/phexarui/animated-text/animated-text";
+
+<Preview link="animated-text/animated-text">
+    <div className="flex justify-center py-4">
+        <AnimatedText />
+    </div>
+</Preview>
+
+---
+
+### Video Mask
+
+Text that acts as a mask for a background video using CSS blend modes. It works automatically in both light and dark modes (revealing the video inside the text characters).
+
+import VideoText from "@/components/phexarui/animated-text/video-text";
+
+<Preview link="animated-text/video-text">
+    <VideoText/>
+</Preview>

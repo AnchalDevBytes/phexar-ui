@@ -9,11 +9,6 @@ import FocusBlurCard from "@/components/phexarui/cards/focus-blur-card";
 import GhostStackCard from "@/components/phexarui/cards/ghost-stack-card";
 import SensorCard from "@/components/phexarui/cards/sensor-card";
 import DevCard from "@/components/phexarui/cards/dev-card";
-import VideoText from "@/components/phexarui/animated-text/video-text";
-import BlogCard from "@/components/phexarui/cards/blog-card";
-import Accordion01 from "@/components/phexarui/accordion/accordion01";
-import Accordion02 from "@/components/phexarui/accordion/accordion02";
-
 
 const HeroSection = () => {
   return (
@@ -80,11 +75,6 @@ const HeroSection = () => {
         <SensorCard/>
 
       </motion.div>
-
-      <VideoText/>
-      <BlogCard/>
-      <Accordion01/>
-      <Accordion02/>
 
     </>
   )

@@ -5,7 +5,7 @@ const BlogCard = () => {
   return (
     <div className='flex justify-center mb-10'>
         <div className='flex flex-col md:flex-row w-full max-w-4xl border border-neutral-100 dark:border-neutral-800 shadow-sm rounded-2xl'>
-            <div className='h-60 md:h-80 w-full md:w-[380px]'>
+            <div className='h-60 md:h-auto w-full md:w-[380px]'>
                 <Image
                     src="https://images.unsplash.com/photo-1764022363311-b09420ddf0ae?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="placeholder"

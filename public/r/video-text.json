@@ -1,0 +1,16 @@
+{
+  "name": "video-text",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\n\ninterface VideoTextProps {\n  text?: string;\n  videoSrc?: string;\n}\n\nconst VideoText = ({ text=\"Animation\", videoSrc=\"/video.mp4\" } : VideoTextProps) => {\n  return (\n    <div className=\"relative w-full h-auto overflow-hidden\">\n      <video \n        src={videoSrc}\n        autoPlay\n        loop\n        muted\n        playsInline\n        className=\"absolute inset-0 w-full h-full object-cover\"\n      />\n\n      <div className={cn(\n        \"relative z-10 flex items-center justify-center w-full h-full\",\n        \"bg-white text-black dark:bg-black dark:text-white mix-blend-screen dark:mix-blend-multiply\"\n      )}>\n        <span className=\"text-5xl md:text-7xl lg:text-9xl font-bold uppercase\">{text}</span>\n      </div>\n    </div>\n  )\n}\n\nexport default VideoText;\n",
+      "path": "/src/components/phexarui/animated-text/video-text.tsx",
+      "target": "components/phexarui/video-text.tsx"
+    }
+  ]
+}

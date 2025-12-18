@@ -32,7 +32,7 @@ const accordionData = [
 ];
 
 
-const Accordion02 = () => {
+const SplitAccordion = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const handleToggle = (index : number ) => {
@@ -88,4 +88,4 @@ const Accordion02 = () => {
   )
 }
 
-export default Accordion02;
+export default SplitAccordion;
