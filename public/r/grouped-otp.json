@@ -1,0 +1,16 @@
+{
+  "name": "grouped-otp",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { useRef, useState } from \"react\";\n\nconst GroupedOtp = ({ length = 6 } : { length?: number }) => {\n    const [otp, setOtp] = useState<string[]>(Array(length).fill(\"\"));\n    const inputRefs = useRef<(HTMLInputElement | null)[]>([]);\n\n    const handleChange = (index: number, value: string) => {\n        if(!/^\\d*$/.test(value)) return;\n\n        const val = value.slice(-1);\n\n        const newOtp = [...otp];\n        newOtp[index] = val;\n        setOtp(newOtp);\n\n        if(val && index < length-1) {\n            inputRefs.current[index+1]?.focus();\n        }\n    }\n\n    const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {\n        if(e.key === \"Backspace\" && !otp[index] && index > 0) {\n            inputRefs.current[index-1]?.focus();\n        }\n    }\n\n    const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {\n        e.preventDefault();\n\n        const pasteData = e.clipboardData.getData(\"text\").slice(0, length).split(\"\");\n        if(pasteData.every((char) => /^\\d$/.test(char))) {\n            setOtp(pasteData);\n            inputRefs.current[length-1]?.focus();\n        }\n    }\n\n  return (\n    <div className=\"flex\">\n        {otp.map((_, index) => {\n            return (\n                <input\n                    key={index}\n                    ref={(el) => { inputRefs.current[index] = el }}\n                    value={otp[index]}\n                    onChange={(e) => handleChange(index, e.target.value)}\n                    onKeyDown={(e) => handleKeyDown(index, e)}\n                    onPaste={handlePaste}\n                    className={cn(\n                        \"flex h-12 w-10 border-y border-l border-neutral-200 dark:border-neutral-700 bg-transparent text-center text-lg font-medium transition-all outline-none\",\n                        \"first:rounded-l-lg last:rounded-r-lg last:border-r\",\n                        \"focus:relative focus:z-10 focus:border-neutral-800 dark:focus:border-neutral-100 focus:ring-1 focus:ring-neutral-800 dark:focus:ring-neutral-100 dark:text-white\",\n                    )}\n                />\n            )\n        })}\n    </div>\n  )\n}\n\nexport default GroupedOtp;\n",
+      "path": "/src/components/phexarui/otp-inputs/grouped-otp.tsx",
+      "target": "components/phexarui/grouped-otp.tsx"
+    }
+  ]
+}

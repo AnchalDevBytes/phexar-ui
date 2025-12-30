@@ -1,0 +1,16 @@
+{
+  "name": "spring-checkbox",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { Check } from \"lucide-react\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { useState } from \"react\";\n\ninterface SpringCheckboxProps {\n  checked?: boolean;\n  onChange?: (checked: boolean) => void;\n  label?: string;\n  id?: string;\n}\n\nconst SpringCheckbox = ({\n  checked,\n  onChange,\n  label,\n  id = \"spring-check\",\n} : SpringCheckboxProps) => {\n\n  const [internalChecked, setInternalChecked] = useState(false);\n\n  const isChecked = checked !== undefined ? checked : internalChecked;\n\n  const handleChange = (newChecked: boolean) => {\n    setInternalChecked(newChecked);\n    if (onChange) {\n      onChange(newChecked);\n    }\n  };\n\n  return (\n    <div className=\"flex items-center gap-3 justify-center p-10\">\n      <div className=\"relative flex items-center\">\n        <input\n          type=\"checkbox\"\n          id={id}\n          checked={isChecked}\n          onChange={(e) => handleChange(e.target.checked)}\n          className=\"sr-only\"\n        />\n        <motion.label\n          htmlFor={id}\n          whileTap={{ scale: 0.9 }}\n          className={cn(\n            \"flex h-5 w-5 cursor-pointer items-center justify-center rounded-sm border\",\n            \"transition-colors duration-200 ease-in-out\",\n            \"border-neutral-300 dark:border-neutral-700 bg-transparent\",\n            isChecked && \"bg-neutral-900 border-neutral-900\",\n            isChecked && \"dark:bg-neutral-100 dark:border-neutral-100\"\n          )}\n        >\n          <AnimatePresence>\n            {isChecked && (\n              <motion.div\n                initial={{ scale: 0, opacity: 0 }}\n                animate={{ scale: 1, opacity: 1 }}\n                exit={{ scale: 0, opacity: 0 }}\n                transition={{ type: \"spring\", stiffness: 300, damping: 20 }}\n              >\n                <Check\n                  size={12}\n                  className=\"text-white dark:text-neutral-900 stroke-3\"\n                />\n              </motion.div>\n            )}\n          </AnimatePresence>\n        </motion.label>\n      </div>\n      \n      {label && (\n        <label \n          htmlFor={id}\n          className=\"text-sm font-medium text-neutral-700 dark:text-neutral-300 cursor-pointer select-none\"\n        >\n          {label}\n        </label>\n      )}\n    </div>\n  )\n}\n\nexport default SpringCheckbox;\n",
+      "path": "/src/components/phexarui/checkboxes/spring-checkbox.tsx",
+      "target": "components/phexarui/spring-checkbox.tsx"
+    }
+  ]
+}

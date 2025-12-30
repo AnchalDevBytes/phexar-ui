@@ -299,5 +299,82 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ],
+    },
+    {
+        name: "number-otp-input",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/otp-inputs/number-otp-input.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "minimal-otp-input",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/otp-inputs/minimal-otp-input.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "grouped-otp",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/otp-inputs/grouped-otp.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "separator-dashed-otp-input",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/otp-inputs/separator-dashed-otp-input.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "spring-checkbox",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/checkboxes/spring-checkbox.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "todo-list-checkbox",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/checkboxes/todo-list-checkbox.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "option-selector",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/checkboxes/option-selector.tsx",
+                type: "registry:component",
+            }
+        ],
     }
 ]

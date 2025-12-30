@@ -1,0 +1,45 @@
+---
+title: Checkboxes
+description: Interactive selection controls including simple toggles, task lists, and multi-select chips.
+icon: CheckSquare
+---
+
+### Spring Checkbox
+
+A playful checkbox with a spring animation. When clicked, it scales down slightly ("squish" effect) and the checkmark springs into view. Ideal for forms or settings pages.
+
+import SpringCheckbox from "@/components/phexarui/checkboxes/spring-checkbox";
+
+<Preview link="checkboxes/spring-checkbox">
+    <div className="flex justify-center w-full">
+        <SpringCheckbox label="Accept terms and conditions" />
+    </div>
+</Preview>
+
+---
+
+### Task List Checkbox
+
+Designed specifically for to-do lists. When checked, it applies a `line-through` style to the label, providing immediate visual feedback that a task is complete.
+
+import TodoListCheckbox from "@/components/phexarui/checkboxes/todo-list-checkbox";
+
+<Preview link="checkboxes/todo-list-checkbox">
+    <div className="flex justify-center w-full">
+        <TodoListCheckbox label="Finish the documentation" />
+    </div>
+</Preview>
+
+---
+
+### Option Selector (Chips)
+
+A multi-select component for tags, categories, or filters. It handles array logic automatically and features smooth layout animations when items are selected or deselected.
+
+import OptionSelector from "@/components/phexarui/checkboxes/option-selector";
+
+<Preview link="checkboxes/option-selector">
+    <div className="flex justify-center w-full py-6">
+        <OptionSelector label="Select Skills" />
+    </div>
+</Preview>

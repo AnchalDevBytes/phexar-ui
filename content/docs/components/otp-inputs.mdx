@@ -1,0 +1,59 @@
+---
+title: OTP Inputs
+description: Accessible, copy-paste friendly one-time password inputs with auto-focus logic.
+icon: KeyRound
+---
+
+### Standard Number
+
+The classic separate-box design found in most authentication flows. It supports auto-focus on typing and handles full-code pasting (e.g., Command+V "1234").
+
+import NumberOTPInput from "@/components/phexarui/otp-inputs/number-otp-input";
+
+<Preview link="otp-inputs/number-otp-input">
+    <div className="flex justify-center w-full py-4">
+        <NumberOTPInput />
+    </div>
+</Preview>
+
+---
+
+### Grouped Segment
+
+A merged control group style, inspired by Linear and Vercel. The inputs share borders to create a cohesive, single-unit feel.
+
+import GroupedOtp from "@/components/phexarui/otp-inputs/grouped-otp";
+
+<Preview link="otp-inputs/grouped-otp">
+    <div className="flex justify-center w-full py-4">
+        <GroupedOtp />
+    </div>
+</Preview>
+
+---
+
+### Separator Layout
+
+Designed for 6-digit codes (like Google Authenticator). It inserts a visual dash separator to improve readability for longer codes.
+
+import SeparatorOTP from "@/components/phexarui/otp-inputs/separator-dashed-otp-input";
+
+<Preview link="otp-inputs/separator-dashed-otp-input">
+    <div className="flex justify-center w-full py-4">
+        <SeparatorOTP />
+    </div>
+</Preview>
+
+---
+
+### Minimal Underline
+
+A sleek, borderless variant that uses bottom borders. Ideal for minimalist designs or mobile-first interfaces.
+
+import MinimalOtpInput from "@/components/phexarui/otp-inputs/minimal-otp-input";
+
+<Preview link="otp-inputs/minimal-otp-input">
+    <div className="flex justify-center w-full py-4">
+        <MinimalOtpInput />
+    </div>
+</Preview>
