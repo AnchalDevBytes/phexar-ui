@@ -1,0 +1,16 @@
+{
+  "name": "spring-stagger-dropdown",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\nimport { useState } from \"react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { MoreHorizontal, Edit, Trash, Share, Copy } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\nconst menuItems = [\n  { icon: Edit, label: \"Edit Item\" },\n  { icon: Copy, label: \"Duplicate\" },\n  { icon: Share, label: \"Share\" },\n  { icon: Trash, label: \"Delete\", danger: true },\n];\n\nconst SpringStaggerDropdown = () => {\n  const [isOpen, setIsOpen] = useState<boolean>(false);\n\n  return (\n    <div className=\"relative flex justify-center\">\n      <button\n        onClick={() => setIsOpen(!isOpen)}\n        className=\"p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-500\"\n      >\n        <MoreHorizontal />\n      </button>\n\n      {isOpen && <div className=\"fixed inset-0 z-10\" onClick={() => setIsOpen(false)} />}\n\n      <AnimatePresence>\n        {isOpen && (\n          <motion.div\n            initial=\"hidden\"\n            animate=\"visible\"\n            exit=\"hidden\"\n            variants={{\n              hidden: { opacity: 0, scale: 0.95, y: -10 },\n              visible: { \n                opacity: 1, \n                scale: 1, \n                y: 0,\n                transition: { staggerChildren: 0.05 } \n              },\n            }}\n            className={cn(\n              \"absolute top-full mt-2 w-48 z-20\",\n              \"bg-white dark:bg-neutral-900\",\n              \"border border-neutral-200 dark:border-neutral-800\",\n              \"rounded-xl shadow-xl overflow-hidden p-1.5\"\n            )}\n          >\n            {menuItems.map((item, idx) => (\n              <motion.button\n                key={idx}\n                variants={{\n                  hidden: { opacity: 0, x: -10 },\n                  visible: { opacity: 1, x: 0 }\n                }}\n                onClick={() => setIsOpen(false)}\n                className={cn(\n                  \"flex w-full items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors\",\n                  item.danger\n                    ? \"text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30\"\n                    : \"text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800\"\n                )}\n              >\n                <item.icon className=\"w-4 h-4\" />\n                {item.label}\n              </motion.button>\n            ))}\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </div>\n  );\n};\n\nexport default SpringStaggerDropdown;\n",
+      "path": "/src/components/phexarui/dropdowns/spring-stagger-dropdown.tsx",
+      "target": "components/phexarui/spring-stagger-dropdown.tsx"
+    }
+  ]
+}

@@ -376,5 +376,82 @@ export const component: Registry = [
                 type: "registry:component",
             }
         ],
+    },
+    {
+        name: "minimal-dropdown",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/dropdowns/minimal-dropdown.tsx",
+                type: "registry:component",
+            }
+        ],
+    },
+    {
+        name: "searchable-dropdown",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/dropdowns/searchable-dropdown.tsx",
+                type: "registry:component",
+            }
+        ]
+    },
+    {
+        name: "spring-stagger-dropdown",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/dropdowns/spring-stagger-dropdown.tsx",
+                type: "registry:component",
+            }
+        ]
+    },
+    {
+        name: "profile-dropdown",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/dropdowns/profile-dropdown.tsx",
+                type: "registry:component",
+            }
+        ]
+    },
+    {
+        name: "classic-tab",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/tabs/classic-tab.tsx",
+                type: "registry:component",
+            }
+        ]
+    },
+    {
+        name: "ghost-tab",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/tabs/ghost-tab.tsx",
+                type: "registry:component",
+            }
+        ]
+    },
+    {
+        name: "underline-tab",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        files: [
+            {
+                path: "src/components/phexarui/tabs/underline-tab.tsx",
+                type: "registry:component",
+            }
+        ]
     }
 ]
