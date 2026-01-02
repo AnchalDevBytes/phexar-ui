@@ -29,11 +29,7 @@ bunx shadcn@latest init
 PhexarUI relies on a cn utility function for class merging. If you don't have it, install it via the CLI:
 
 
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://phexar-ui.vercel.app/r/utils.json
-```
+<Tabs items={["npx", "pnpm", "bun"]}>
  
 ```bash tab="npx"
 npx shadcn@latest add https://phexar-ui.vercel.app/r/utils.json
@@ -43,6 +39,9 @@ npx shadcn@latest add https://phexar-ui.vercel.app/r/utils.json
 pnpm dlx shadcn@latest add https://phexar-ui.vercel.app/r/utils.json
 ```
 
+```bash tab="bun"
+bunx shadcn@latest add https://phexar-ui.vercel.app/r/utils.json
+```
 </Tabs>
 
 ### 3. Add Components
@@ -50,18 +49,18 @@ You can now add any component to your project. Dependencies (like lucide-react o
 
 For example, to add the Elastic Search Bar:
 
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar.json
-```
- 
+<Tabs items={["npx", "pnpm", "bun"]}>
+  
 ```bash tab="npx"
 npx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar.json
 ```
 
 ```bash tab="pnpm"
 pnpm dlx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar.json
+```
+
+```bash tab="bun"
+bunx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar.json
 ```
 
 </Tabs>
@@ -83,11 +82,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 Blocks are a set of components to make a complete blocks, they contain multiples files. To install them it is mandatory to use the `cli`. For example it you'd like to install `ai-card-generation` block:
 
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://phexar-ui.vercel.app/r/ai-card-generation.json
-```
+<Tabs items={["npx", "pnpm", "bun"]}>
  
 ```bash tab="npx"
 npx shadcn@latest add https://phexar-ui.vercel.app/r/ai-card-generation.json
@@ -95,6 +90,10 @@ npx shadcn@latest add https://phexar-ui.vercel.app/r/ai-card-generation.json
 
 ```bash tab="pnpm"
 pnpm dlx shadcn@latest add https://phexar-ui.vercel.app/r/ai-card-generation.json
+```
+
+```bash tab="bun"
+bunx shadcn@latest add https://phexar-ui.vercel.app/r/ai-card-generation.json
 ```
 
 </Tabs>
@@ -121,18 +120,18 @@ Some components require additional libraries, listed at the bottom of each compo
 
 For monorepo `shadcn/ui` CLI contain the options `-c` to the path to your workspace for example:
 
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar -c ./apps/www
-```
- 
+<Tabs items={["npx", "pnpm", "bun"]}>
+  
 ```bash tab="npx"
 npx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar -c ./apps/www
 ```
 
 ```bash tab="pnpm"
 pnpm dlx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar.json -c ./apps/www
+```
+
+```bash tab="bun"
+bunx shadcn@latest add https://phexar-ui.vercel.app/r/elastic-search-bar -c ./apps/www
 ```
 
 </Tabs>
